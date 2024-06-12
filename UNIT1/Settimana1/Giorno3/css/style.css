@@ -23,6 +23,7 @@ h6 {
 
 .bolder {
     font-weight: bolder;
+    color: #004d4c;
 }
 
 figcaption {
@@ -41,7 +42,12 @@ h2 {
 
 .contanierMain {
     margin: 0 auto;
-    width: 50%;
+    width: 60%;
+}
+
+.containerTitle {
+    margin: 0 auto;
+    width: 70%;
 }
 
 .container1 {
