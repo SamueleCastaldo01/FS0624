@@ -5,7 +5,7 @@ body {
     font-family: "Georgia", serif;
 }
 
-p {
+p, .contanier2, .container3, .contanierList {
     text-align: left;
 }
 
@@ -62,7 +62,6 @@ h2 {
 }
 
 .contanier2 {
-    text-align: left;
     color: #B5460F;
     border-left: 2px solid #fee093;
     padding-left: 15px;
@@ -70,13 +69,11 @@ h2 {
 
 .container3 {
     margin-top: 50px;
-    text-align: left;
     border-bottom: 2px solid #C5F3F3;
 }
 
 .contanierList {
     margin-top: 30px;
-    text-align: left;
 }
 
 .sVideo {
