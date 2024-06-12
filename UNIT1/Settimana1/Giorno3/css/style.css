@@ -10,7 +10,7 @@ p {
 }
 
 a {
-    color: #3a8b8c;
+    color: #107777;
 }
 
 p a {
@@ -35,7 +35,8 @@ h2 {
 }
 
 .logo {
-    width: 125px;
+    width: 145px;
+    margin-bottom: 10px;
 }
 
 .contanierMain {
