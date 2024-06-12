@@ -1,0 +1,84 @@
+
+
+body {
+    text-align: center;
+    font-family: "Georgia", serif;
+}
+
+p {
+    text-align: left;
+}
+
+a {
+    color: #3a8b8c;
+}
+
+p a {
+    text-decoration: underline; /* Aggiunge una sottolineatura al testo del link */
+}
+
+h6 {
+    font-weight: normal;
+}
+
+.bolder {
+    font-weight: bolder;
+}
+
+figcaption {
+    margin-top: 12px;
+    color: #a4a4a4;
+}
+
+h2 {
+    font-weight: normal;
+}
+
+.logo {
+    width: 125px;
+}
+
+.contanierMain {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.containerTitle {
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+}
+
+.container1 {
+    background-color: #fdfbf1;
+    color: #107777;
+    border-top: 2px solid #fee093;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 45px;
+}
+
+.contanier2 {
+    text-align: left;
+    color: #B5460F;
+    border-left: 2px solid #fee093;
+    padding-left: 15px;
+}
+
+.container3 {
+    margin-top: 50px;
+    text-align: left;
+    border-bottom: 2px solid #C5F3F3;
+}
+
+.contanierList {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.sVideo {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
