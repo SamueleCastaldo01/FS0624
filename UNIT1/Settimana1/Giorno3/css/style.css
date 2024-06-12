@@ -44,12 +44,6 @@ h2 {
     width: 50%;
 }
 
-.containerTitle {
-    margin: 0 auto;
-    width: 80%;
-    text-align: center;
-}
-
 .container1 {
     background-color: #fdfbf1;
     color: #107777;
@@ -57,7 +51,8 @@ h2 {
     display: flex;
     justify-content: center; 
     align-items: center; 
-    height: 45px;
+    height: 35px;
+    margin-bottom: 50px;
 }
 
 .contanier2 {
@@ -81,5 +76,9 @@ h2 {
 .sVideo {
     width: 100%;
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.b1 {
+    font-weight: 500;
 }
