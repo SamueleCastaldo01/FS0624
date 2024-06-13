@@ -75,8 +75,15 @@ main {
     color: gray;
 }
 
+.list {
+    padding: 10px;
+}
+
 .material-symbols-outlined {
-    font-size: 17px; /* Imposta la dimensione dell'icona a 24 pixel */
+    font-size: 18px; /* Imposta la dimensione dell'icona a 24 pixel */
+    margin: 0px;
+    line-height: 1.5;
+    vertical-align: middle;
 }
 
 p b {
@@ -201,13 +208,14 @@ form input {
 }
 
 .category {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 500;
     margin: 0px;
 }
 
 .date {
     text-align: right;
+    font-size: 15px;
 }
 
 /* FOOTER */
