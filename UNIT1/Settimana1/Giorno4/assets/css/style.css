@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* IMPOSTAZIONI GENERALI */
+
+
+*{
+margin: 10px;
+padding: 0;
+box-sizing: border-box;
+font-family: "Poppins", sans-serif;}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+body {
+    background-image: url("../img/sfondo.png");
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    background: linear-gradient(to bottom, #0099bb, #006688);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.header p {
+    color: white;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-weight: bolder;
+}
+
+nav ul li {
+    list-style: none;
+
+}
+
+nav ul li::before{
+    content: "⇒";
+    color: white;
+}
+
+nav ul li::after{
+    content: "⇐";
+    color: white;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+nav ul li a:hover {
+    color: red;
+}
+
+/* MAIN */
+
+main {
+    background-color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.sottoTitolo {
+    color: gray;
+}
+
+.material-symbols-outlined {
+    font-size: 17px; /* Imposta la dimensione dell'icona a 24 pixel */
+}
+
+p b {
+    color: #aa2072;
+    margin: 0px;
+}
+
+.sTag {
+    margin: 0px;
+    background-color: #ddddde;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+
+/* TABELLE */
+table {
+    margin: 0 auto;
+    border-bottom: 2px solid #3366cc;
+}
+
+caption {
+margin: 0px;
+font-weight: 600;
+font-size: 20px;
+font-style: italic;
+}
+
+thead {
+    color: white;
+}
+
+thead tr {
+    background-color: #3366cc;
+}
+
+thead tr th {
+    padding: 20px;
+    margin: 0px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #eeeeee;
+}
+
+tbody tr {
+    height: 50px;
+}
+
+tbody tr td {
+    text-align: center;
+}
+
+/* ELEMENTI NEL MAIN - ARTICLE */
+
+p a {
+    color: #28aed2;
+    margin: 0px;
+    font-weight: 600;
+}
+
+iframe {
+    border-radius: 15px;
+    width: 100%;
+    height: 220px;
+    margin: 0px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* FORM */
+
+.sForm {
+    background-color: #ddddde;
+    margin-top: 50px;
+    padding: 15px;
+}
+
+.sForm h2, .sAside h2 {
+text-align: center;
+text-transform: uppercase;
+}
+
+form input {
+    width: 250px;
+    height: 40px;
+    font-size: 16px;
+    padding-left: 10px;
+    margin: 0px;
+    background-color: white;
+    border: none;
+    border-bottom: 1px dotted black;
+}
+
+.sForm button {
+    width: 30%;
+    height: 36px;
+    line-height:0svw;
+    padding: 10px;
+    margin: 0px;
+    background-color: #3366cc;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* ELEMENTI NELL' ASIDE */
+
+.aside1 {
+    background-color: #ddddde;
+    border: 1px solid gray;
+    padding: 15px;
+    margin-top: 25px;
+}
+
+.aside1 a {
+    font-size: 20px;
+    font-weight: 700;
+    color: #28aed2;
+    margin: 0px;
+}
+
+.category {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0px;
+}
+
+.date {
+    text-align: right;
+}
+
+/* FOOTER */
+
+footer {
+    margin-top: 30px;
+    color: white;
+    padding: 15px;
+    padding-top: 5px;
+    background: linear-gradient(to bottom, #005566, #2a3338);
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+footer p {
+    font-size: 18px;
+}
+
+footer a {
+    color: #ff00fe;
+}
