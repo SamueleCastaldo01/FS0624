@@ -13,10 +13,12 @@ REGOLE
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 /*
-Ne sono di tre tipi, number string e boolean
+number string e boolean, null undefined
 number sono i numeri: possono essere sia positivi che negativi e decimali
 string sono le parole le lettere
 boolean assume sono due valori possibili true e false, molto usati come flag
+null: valore nullo
+undifined: valore non definito
 */
 
 
