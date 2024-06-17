@@ -17,8 +17,8 @@ number string e boolean, null undefined
 number sono i numeri: possono essere sia positivi che negativi e decimali
 string sono le parole le lettere
 boolean assume sono due valori possibili true e false, molto usati come flag
-null: valore nullo
-undifined: valore non definito
+null: valore nullo, messo a posta a valore nullo
+undifined: valore non definito, ma verrà definito successivamente
 */
 
 
