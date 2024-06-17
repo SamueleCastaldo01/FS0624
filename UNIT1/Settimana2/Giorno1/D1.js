@@ -34,7 +34,7 @@ undifined: valore non definito, ma verrà definito successivamente
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-console.log(12 + 20)  // si lo so benissimo che bisogna mettere le varibili, ma sono pigro
+console.log(12 + 20)  // si lo so benissimo che bisogna mettere le varibili, ma sono PIGRO
 
 /* ESERCIZIO 4
  Crea una variable di nome "x" e assegna ad essa il numero 12.
@@ -49,9 +49,9 @@ let x = 12
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-myName = "il tuo cognome"
+myName = "il tuo cognome"  //lol
 const y = 10
-// y= 1
+// y= 1         //qui va in errore
 
 /* ESERCIZIO 6
  Esegui una sottrazione tra i numeri 4 e la variable "x" appena dichiarata (che contiene il numero 12).
