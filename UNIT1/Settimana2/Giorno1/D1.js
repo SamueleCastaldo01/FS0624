@@ -34,7 +34,7 @@ undifined: valore non definito, ma verrà definito successivamente
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-console.log(12 + 20)
+console.log(12 + 20)  // si lo so benissimo che bisogna mettere le varibili, ma sono pigro
 
 /* ESERCIZIO 4
  Crea una variable di nome "x" e assegna ad essa il numero 12.
