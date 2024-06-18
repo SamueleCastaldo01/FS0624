@@ -243,5 +243,6 @@ console.log(array1)
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log("esercizio 15--------------")
 array1[array1.length - 1] = 100
 console.log(array1) 
