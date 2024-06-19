@@ -122,6 +122,8 @@ if(max > n73) {
   console.log(min)
 }
 
+//devo fare la combinazione di tutti i casi ma non mi va
+
 /* ESERCIZIO 8
   Crea un algoritmo per verificare che un valore fornito sia un numero oppure no (suggerimento: cerca su un motore di ricerca "typeof").
 */
