@@ -145,7 +145,7 @@ const eyeColor = {
   yellow: [],
   brown : [],
   red: [],
-  blueGray: []
+  'blue-gray': []
 }
 console.log(eyeColor)
 
@@ -176,7 +176,7 @@ for(let i=0; i < starWarsCharacters.length; i++) {
       break;
   
     case 'blue-gray':
-      eyeColor.blueGray.push(starWarsCharacters[i].eye_color)
+      eyeColor['blue-gray'].push(starWarsCharacters[i].eye_color)
       break;
   }
 }
