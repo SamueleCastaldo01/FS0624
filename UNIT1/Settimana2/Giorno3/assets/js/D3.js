@@ -104,7 +104,6 @@ const starWarsCharacters = [
 /* ESERCIZIO 1
   Crea una variabile chiamata "charactersNames" e assegnale un array vuoto
 */
-
 console.log("Esercizio 1---------")
 const charactersNames = []
 console.log(charactersNames)
@@ -115,7 +114,7 @@ console.log(charactersNames)
   Dovrai accedere alla proprietà "name" di ogni oggetto in esso contenuto, e inserirla nell'array "charactersNames" creato precedentemente.
   Come risultato dovresti ottenere qualcosa di simile: ["Luke Skywalker", "C-3PO", "R2-D2", etc..]
 */
-
+console.log(" ")
 console.log("Esercizio 2---------")
 for(let i = 0; i < starWarsCharacters.length; i++) {
   charactersNames.push(starWarsCharacters[i].name);
@@ -125,7 +124,7 @@ console.log(charactersNames)
 /* ESERCIZIO 3
   Seguendo i passaggi precedenti crea un nuovo array chiamato "femaleCharacters" e inserisci al suo interno tutti gli oggetti femminili.
 */
-
+console.log(" ")
 console.log("Esercizio 3---------")
 const femaleCharacters = []
 for(let i = 0; i < starWarsCharacters.length; i++) {
@@ -139,7 +138,7 @@ console.log(femaleCharacters);
   Crea un oggetto "eyeColor" che abbia le seguenti proprietà: blue, yellow, brown, red, blue-gray.
   Ad ognuna di queste proprietà assegna come valore un array vuoto.
 */
-
+console.log(" ")
 console.log("Esercizio 4---------")
 const eyeColor = {
   blue : [],
@@ -156,7 +155,7 @@ console.log(eyeColor)
   Utilizza uno switch statement per inserire uno ad uno gli oggetti dei personaggi di "starWarsCharacters" negli array relativi al colore degli occhi precedentemente creati.
   Ogni personaggio dovrà finire nell'array corrispondente al suo colore degli occhi (al valore della sua proprietà "eye_color").
 */
-
+console.log(" ")
 console.log("Esercizio 5---------")
 for(let i=0; i < starWarsCharacters.length; i++) {
   switch(starWarsCharacters[i].eye_color) {
@@ -188,7 +187,7 @@ console.log(eyeColor)
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio. Salvala in una variabile chiamata "crewMass".
 */
-
+console.log(" ")
 console.log("Esercizio 6---------")
 let crewMass = 0;
 let i = 0;
@@ -213,7 +212,7 @@ console.log("la massa è uguale: " + crewMass)
 
   Una volta fatto, modifica la massa di qualche elemento dell'equipaggio e vedi se riesci ad ottenere un messaggio diverso.
 */
-
+console.log(" ")
 console.log("Esercizio 7---------")
 if (crewMass < 500) {
   console.log("Ship is under loaded")
@@ -232,15 +231,47 @@ if (crewMass < 500) {
 /* ESERCIZIO 8
   Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi effettuare la riassegnazione del valore corrispondente o creare un nuovo array)
 */
-
+console.log(" ")
 console.log("Esercizio 8---------")
+const genderRobot = [...starWarsCharacters]
+
+for(let i=0; i < genderRobot.length; i++) {
+  if(genderRobot[i].gender === "n/a") {
+    genderRobot[i].gender = "robot"
+  }
+}
+console.log(genderRobot)
 
 
 /* --EXTRA-- ESERCIZIO 9
   Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "charactersNames" le stringhe corrispondenti a personaggi con lo stesso nome.
   Una volta fatto crea un console.log per controllare la proprietà length di "charactersNames" prima e dopo l'operazione.
 */
+console.log(" ")
+console.log("Esercizio 9---------")
+console.log("Prima dell'operazione: " + charactersNames.length)
+for(let i=0; i<femaleCharacters.length; i++) {
+  for(let j=0; j<charactersNames.length; j++) {
+    if(femaleCharacters[i].name === charactersNames[j]) {
+       charactersNames.splice(j,1);
+    }
+  }
+
+}
+console.log("Dopo l'operazione: " + charactersNames.length)
 
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
+console.log(" ")
+console.log("Esercizio 9---------")
+const randomIndex = Math.floor(Math.random() * (starWarsCharacters.length + 1));   //genera un numero casuale a 0 fino alla lunghezza di starWarsCharacters
+
+console.log("Ecco alcuni dettagli su: " + starWarsCharacters[randomIndex].name);
+console.log("- Altezza: " + starWarsCharacters[randomIndex].height +   "cm");
+console.log("- Peso: " +  starWarsCharacters[randomIndex].mass + "kg");
+console.log("- Colore dei capelli: " + starWarsCharacters[randomIndex].hair_color);
+console.log("- Colore della pelle: " + starWarsCharacters[randomIndex].skin_color);
+console.log("- Colore degli occhi : " + starWarsCharacters[randomIndex].eye_color);
+console.log("- Anno di nascita: " + starWarsCharacters[randomIndex].birth_year);
+console.log("- Genere: " + starWarsCharacters[randomIndex].gender);
