@@ -152,6 +152,19 @@ console.log(cutString("EPICODE"));
 console.log(" ")
 console.log("Esercizio10-------------------")
 function giveMeRandom(n) {
-    
+    let nR = 0
+    const array = []   
+    let i = 0
+
+    while (i < n) {
+       nR = Math.floor(Math.random() * 11);
+       if(array.includes(nR)) {     //va a vedere se il numero casuale è presente nell' array. Se si non fa nulla, quindi rifà il ciclo
+
+       } else {                  //non è stato trovato e quindi lo va add aggiungere
+       array[i] = nR
+       i++
+        }
+    }
+    return array
 }
-console.log(giveMeRandom(3));
+console.log(giveMeRandom(5));
