@@ -48,7 +48,24 @@ console.log("La somma totale dei numeri maggiori di 5 è " + checkArray(array))
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log(" ")
+console.log("Esercizio2-----------------")
+const shoppingCart = [
+    { id: 1, name: "Prodotto A", price: 10.99, quantity: 2 },
+    { id: 2, name: "Prodotto B", price: 5.99, quantity: 1 },
+    { id: 3, name: "Prodotto C", price: 8.50, quantity: 3 },
+    { id: 4, name: "Prodotto D", price: 15.75, quantity: 1 }
+];
 
+function shoppingCartTotal() {
+    let total = 0
+
+    for(i=0; i < shoppingCart.length; i++) {
+        total = total + (shoppingCart[i].price * shoppingCart[i].quantity) 
+    }
+    return total
+}
+console.log(shoppingCartTotal())
 
 
 /* EXTRA 3
@@ -57,6 +74,17 @@ console.log("La somma totale dei numeri maggiori di 5 è " + checkArray(array))
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log(" ")
+console.log("Esercizio3-----------------")
+
+function addToShoppingCart(product) {
+    shoppingCart.push(product);
+
+    return shoppingCart.length;
+}
+
+let nuovoProdotto = { id: 4, name: "Prodotto E", price: 15.75, quantity: 1 };
+console.log(addToShoppingCart(nuovoProdotto))
 
 /* EXTRA 4
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
@@ -64,6 +92,8 @@ console.log("La somma totale dei numeri maggiori di 5 è " + checkArray(array))
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log(" ")
+console.log("Esercizio4-----------------")
 
 /* EXTRA 5
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
