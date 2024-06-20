@@ -256,9 +256,9 @@ for(let i=0; i<femaleCharacters.length; i++) {
        charactersNames.splice(j,1);
     }
   }
-
 }
 console.log("Dopo l'operazione: " + charactersNames.length)
+//doveva essere fatto senza splice, basta che andavo a ripoplare l'array solamente con quelli giusti
 
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
