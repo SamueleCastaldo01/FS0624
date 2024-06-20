@@ -38,6 +38,7 @@ console.log(" ")
 console.log("Esercizio3-------------------")
 function crazyDiff(n1) {
     if(n1 > 19) {
+        console.log(Math.abs(n1 -19))
         return Math.abs(n1 -19) * 3
     } else {
         return Math.abs(n1 -19)
@@ -128,7 +129,7 @@ console.log("Esercizio8-------------------")
 function upperFirst(s) {
     return s.replace(/\b\w/g, c => c.toUpperCase());   //va all'inizio di ogni parola con carattere alfabetico
 }
-
+               //questo metodo non va bene devo, fare lo split e tutto il resto
 console.log(upperFirst("Ciao a tutti, felice di essere ancora vivo"))
 
 /* ESERCIZIO 9
