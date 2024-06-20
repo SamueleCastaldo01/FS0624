@@ -3,6 +3,11 @@
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log("Esercizio1-------------------")
+function area(l1, l2) {
+    return l1 * l2;
+}
+console.log(area(10, 20))
 
 /* ESERCIZIO 2
  Scrivi una funzione di nome "crazySum", che riceve due numeri interi come parametri.
@@ -11,6 +16,17 @@
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log(" ")
+console.log("Esercizio2-------------------")
+function crazySum(n1, n2) {
+    if(n1 === n2) {
+        return (n1 + n2) *3;
+    } else {
+        return n1 +n2
+    }
+}
+
+console.log(crazySum(10, 10))
 
 /* ESERCIZIO 3
  Scrivi una funzione di nome "crazyDiff" che calcola la differenza assoluta tra un numero fornito come parametro e 19.
@@ -18,6 +34,18 @@
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log(" ")
+console.log("Esercizio3-------------------")
+function crazyDiff(n1) {
+    if(n1 > 19) {
+        return Math.abs(n1 -19) * 3
+    } else {
+        return Math.abs(n1 -19)
+    }
+}
+
+console.log(crazyDiff(22))
+
 
 /* ESERCIZIO 4
  Scrivi una funzione di nome "boundary" che accetta un numero intero n come parametro, e ritorna true se n è compreso tra 20 e 100 (incluso) oppure
@@ -25,6 +53,18 @@
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log(" ")
+console.log("Esercizio4-------------------")
+function boundary(n1) {
+    if((n1 >= 20 && n1<= 100) || n1 === 400) {
+        return true
+    } else {
+        return false
+    }
+}
+
+console.log(boundary(23))
+
 
 /* ESERCIZIO 5
  Scrivi una funzione di nome "epify" che accetta una stringa come parametro.
@@ -33,6 +73,8 @@
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log(" ")
+console.log("Esercizio5-------------------")
 
 /* ESERCIZIO 6
  Scrivi una funzione di nome "check3and7" che accetta un numero positivo come parametro. La funzione deve controllare che il parametro sia un multiplo
