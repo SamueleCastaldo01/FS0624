@@ -165,6 +165,19 @@ console.log(average(arr))
 console.log(" ")
 console.log("Esercizio8-----------------")
 
+function longest(array) {
+    let max = 0
+    let stringa = "";
+    for(let i = 0; i < array.length; i++) {
+        if(array[i].length > max) {
+            max = array[i].length
+            stringa = array[i]
+        }
+    }
+    return stringa
+}
+let arre = ["si esatto", "bho", "come stai bro", "ciao"]
+console.log(longest(arre))
 
 /* EXTRA 9
  Crea una funzione per creare un filtro anti-spam per la tua casella email. La funzione riceve un parametro stringa chiamato "emailContent", e torna un valore booleano.
@@ -172,12 +185,44 @@ console.log("Esercizio8-----------------")
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log(" ")
+console.log("Esercizio9-----------------")
+
+function filtroAntiSpam(emailContent) {
+    // Convertiamo il contenuto dell'email a maiuscolo per rendere il controllo case-insensitive
+    let contenutoUpperCase = emailContent.toUpperCase();
+
+    if (contenutoUpperCase.includes("SPAM") || contenutoUpperCase.includes("SCAM")) {  //controllo
+        return false;
+    } else {
+        return true;
+    }
+}
+
+let email1 = "Questa è una email importante senza spam.";
+console.log(filtroAntiSpam(email1));
+
 
 /* EXTRA 10
  Scrivi una funzione che riceve una data come parametro, e calcola il numero di giorni passati da quella data.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log(" ")
+console.log("Esercizio10-----------------")
+function giorniPassati(dataIniziale) {
+    let dataOggi = new Date();   //prendiamo la data odierna
+
+    let differenzaMillisecondi = dataOggi - dataIniziale;  //differenza in millisecondi
+    
+    let differenzaGiorni = differenzaMillisecondi / (1000 * 60 * 60 * 24);  //conversione in giorni
+    
+    return Math.floor(differenzaGiorni);
+}
+
+let data = new Date("2023-01-01");
+let giorniTrascorsi = giorniPassati(data);
+
 
 /* EXTRA 11
  Scrivi una funzione chiamata "matrixGenerator" che riceve come parametri due numeri interi, "x" e "y".
