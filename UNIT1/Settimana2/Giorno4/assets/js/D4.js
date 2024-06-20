@@ -75,6 +75,15 @@ console.log(boundary(23))
 /* SCRIVI QUI LA TUA RISPOSTA */
 console.log(" ")
 console.log("Esercizio5-------------------")
+function epify(s) {
+    if (s.startsWith("EPICODE")) {
+        return s;
+    } else {
+        return "EPICODE " + s;
+    }
+}
+
+console.log(epify("EPICODE Ciao come stai"))
 
 /* ESERCIZIO 6
  Scrivi una funzione di nome "check3and7" che accetta un numero positivo come parametro. La funzione deve controllare che il parametro sia un multiplo
@@ -82,12 +91,30 @@ console.log("Esercizio5-------------------")
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log(" ")
+console.log("Esercizio6-------------------")
+function check3and7(n1) {
+    if(n1 % 3 == 0 || n1 % 7 == 0) {
+        return true
+    } else {
+        return false
+    }
+}
+
+console.log(check3and7(7))
 
 /* ESERCIZIO 7
  Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita come parametro (es. "EPICODE" --> "EDOCIPE")
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log(" ")
+console.log("Esercizio7-------------------")
+function reverseString(s) {
+    return s.split('').reverse().join('');     // prima divide tutte le lettere tramite split, poi reverse metodo di un array, e infine join per unire i caratteri
+}
+
+console.log(reverseString("EPICODE"))
 
 /* ESERCIZIO 8
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
@@ -95,6 +122,13 @@ console.log("Esercizio5-------------------")
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log(" ")
+console.log("Esercizio8-------------------")
+function upperFirst(s) {
+    return s.replace(/\b\w/g, c => c.toUpperCase());   //va all'inizio di ogni parola con carattere alfabetico
+}
+
+console.log(upperFirst("Ciao a tutti, felice di essere ancora vivo"))
 
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
@@ -102,9 +136,22 @@ console.log("Esercizio5-------------------")
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log(" ")
+console.log("Esercizio9-------------------")
+function cutString(s) {
+    return s.substring(1, s.length -1)
+}
+
+console.log(cutString("EPICODE"));
 
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log(" ")
+console.log("Esercizio10-------------------")
+function giveMeRandom(n) {
+    
+}
+console.log(giveMeRandom(3));
