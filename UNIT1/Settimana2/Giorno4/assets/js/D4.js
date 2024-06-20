@@ -45,6 +45,7 @@ function crazyDiff(n1) {
 }
 
 console.log(crazyDiff(22))
+//qui dato che mi servivano due return e non si possono usare, dovevo creare una variabile globale e usarla all'interno della funzione
 
 
 /* ESERCIZIO 4

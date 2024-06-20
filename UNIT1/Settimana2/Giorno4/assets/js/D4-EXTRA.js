@@ -233,3 +233,22 @@ let giorniTrascorsi = giorniPassati(data);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log(" ")
+console.log("Esercizio11-----------------")
+
+function matrixGenerator(y, x) {
+    let matrice = [];
+
+
+    for(let i = 0; i < x; i++) {
+        let riga = [];                    //ogni volta completato una riga la va a ricreare vuota
+        for(let j = 0; j < y; j++) {
+            riga.push(i.toString() + j.toString());  //li trasformo in stringa e faccio la concatenazione
+        }
+        matrice.push(riga);    //inserisco la riga nella matrice
+    }
+    return matrice;          //ritorna la matrice
+}
+
+let matrice = matrixGenerator(4, 2);
+console.log(matrice);
