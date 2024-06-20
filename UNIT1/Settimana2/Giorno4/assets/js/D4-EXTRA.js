@@ -53,7 +53,7 @@ console.log("Esercizio2-----------------")
 const shoppingCart = [
     { id: 1, name: "Prodotto A", price: 10.99, quantity: 2 },
     { id: 2, name: "Prodotto B", price: 5.99, quantity: 1 },
-    { id: 3, name: "Prodotto C", price: 8.50, quantity: 3 },
+    { id: 3, name: "Prodotto C", price: 32.50, quantity: 3 },
     { id: 4, name: "Prodotto D", price: 15.75, quantity: 1 }
 ];
 
@@ -83,7 +83,7 @@ function addToShoppingCart(product) {
     return shoppingCart.length;
 }
 
-let nuovoProdotto = { id: 4, name: "Prodotto E", price: 15.75, quantity: 1 };
+let nuovoProdotto = { id: 4, name: "Prodotto E", price: 12.75, quantity: 1 };
 console.log(addToShoppingCart(nuovoProdotto))
 
 /* EXTRA 4
@@ -95,12 +95,33 @@ console.log(addToShoppingCart(nuovoProdotto))
 console.log(" ")
 console.log("Esercizio4-----------------")
 
+function maxShoppingCart(shoppingCart) {
+    let max = 0
+    for(let i=0; i < shoppingCart.length; i++) {
+
+        if(max < shoppingCart[i].price) {
+            max = shoppingCart[i].price
+        } else {
+
+        }
+    }
+    return max
+}
+console.log(maxShoppingCart(shoppingCart))
+
 /* EXTRA 5
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "latestShoppingCart" che riceve l'array "shoppingCart" e ritorna l'ultimo elemento.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log(" ")
+console.log("Esercizio5-----------------")
+
+function latestShoppingCart(shoppingCart){
+    return shoppingCart[shoppingCart.length - 1]
+}
+console.log(latestShoppingCart(shoppingCart))
 
 /* EXTRA 6
  Crea una funzione chiamata "loopUntil" che riceve un numero intero come parametro con valore tra 0 e 9.
@@ -108,18 +129,42 @@ console.log("Esercizio4-----------------")
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log(" ")
+console.log("Esercizio6-----------------")
+
+
 
 /* EXTRA 7
 Crea una funzione chiamata "average" che riceve un array come parametro e ne ritorna la media aritmetica. La funzione salta automaticamente i valori non numerici nell'array.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log(" ")
+console.log("Esercizio7-----------------")
+
+function average(array) {
+    let somma = 0
+    let n = 0
+
+    for(let i = 0; i < array.length; i++) {
+        if(typeof array[i] === "number") {
+            somma += array[i];
+            n++                       //aggiorna il contatore per dividere
+        }
+    }
+    return somma / n
+}
+let arr = [4, "bho", 2, 4, 5, 2, 56, "ciao"]
+console.log(average(arr))
 
 /* EXTRA 8
  Crea una funzione chiamata "longest" che trova la stringa più lunga all'interno di un array di stringhe fornito come parametro.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log(" ")
+console.log("Esercizio8-----------------")
+
 
 /* EXTRA 9
  Crea una funzione per creare un filtro anti-spam per la tua casella email. La funzione riceve un parametro stringa chiamato "emailContent", e torna un valore booleano.
