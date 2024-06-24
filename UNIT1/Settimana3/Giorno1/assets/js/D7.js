@@ -83,15 +83,53 @@ console.log(reduceNumber(ar))
 console.log(" ")
 console.log("Esercizio 6")
 
+function mapEse1(array, n) {
+  let ar2 = []
+ array.map(number => ar2.push(number + n) )
+
+ return ar2
+}
+
+let ar2 = mapEse1(ar, ar.length)
+console.log(ar2)
+
 /* ESERCIZIO 7 (map)
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
+console.log(" ")
+console.log("Esercizio 7")
+
+function stringLengths(stringsArray) {
+  let lengthsArray = stringsArray.map((str) => {
+    return str.length;
+  });
+
+  return lengthsArray
+}
+
+let strings = ["EPICODE", "is", "great"];
+let lengths = stringLengths(strings);
+console.log(lengths); 
+
 
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
+console.log(" ")
+console.log("Esercizio 8")
 
+function DispNumber(array) {
+  let disAr = []
+  array.forEach(number => {
+    if(number % 2 != 0) {
+      disAr.push(number)
+    }
+  })
+  return disAr
+}
+
+console.log(DispNumber(ar))
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
   {
