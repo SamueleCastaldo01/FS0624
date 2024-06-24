@@ -327,11 +327,11 @@ console.log(" ")
 console.log("Esercizio 13")
 
 function sommaAnniMovie(movies) {
-  let somma = movies.reduce((accumulator, currentValue) => {
-    return accumulator + parseFloat(currentValue.Year); 
+  let somma = movies.reduce((accumulator, movie) => {
+    return accumulator + parseFloat(movie.Year); 
   }, 0); 
 
-  return somma; // Ritorna la somma totale degli anni
+  return somma
 }
 console.log(sommaAnniMovie(movies))
 
