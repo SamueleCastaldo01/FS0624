@@ -324,12 +324,43 @@ console.log(filmMillennio)
 */
 
 console.log(" ")
-console.log("Esercizio 12")
+console.log("Esercizio 13")
+
+function sommaAnniMovie(movies) {
+  let somma = movies.reduce((accumulator, currentValue) => {
+    return accumulator + parseFloat(currentValue.Year); 
+  }, 0); 
+
+  return somma; // Ritorna la somma totale degli anni
+}
+console.log(sommaAnniMovie(movies))
 
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
+console.log(" ")
+console.log("Esercizio 14")
+
+function movieId(movies, id) {
+  let film = movies.find(movie => {
+    return movie.imdbID === id
+  })
+ return film
+}
+
+console.log(movieId(movies, "tt4154796"))
 
 /* ESERCIZIO 15 (findIndex)
   Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
 */
+console.log(" ")
+console.log("Esercizio 15")
+
+function movieIndex(movies, anno) {
+  let film = movies.findIndex(movie => {
+    return movie.Year == anno
+  })
+ return film
+}
+
+console.log(movieIndex(movies, "1963"))
