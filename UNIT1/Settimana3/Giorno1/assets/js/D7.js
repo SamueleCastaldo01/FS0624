@@ -131,6 +131,8 @@ function DispNumber(array) {
 
 console.log(DispNumber(ar))
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
+
+
 const movies = [
   {
     Title: 'The Lord of the Rings: The Fellowship of the Ring',
@@ -249,22 +251,80 @@ const movies = [
 /* ESERCIZIO 9 (forEach)
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
+console.log(" ")
+console.log("Esercizio 9")
+
+function filmVecchio(movies) {
+  let min = 3000
+ movies.forEach(movie => {
+  if(parseFloat(movie.Year) <= min) {
+    min = parseFloat(movie.Year)
+  }
+ })
+ return min
+}
+
+console.log(filmVecchio(movies))
+
 
 /* ESERCIZIO 10
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
+console.log(" ")
+console.log("Esercizio 10")
+
+function NumeroDeiFilm(movies) {
+  return movies.length
+}
+
+console.log(NumeroDeiFilm(movies))
 
 /* ESERCIZIO 11 (map)
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
+console.log(" ")
+console.log("Esercizio 11")
+let nomeFilm = []
+
+function NomeDeiFilm(movies) {
+  let array = []
+  movies.map(movie => {
+    array.push(movie.Title)
+  })
+  return array
+}
+
+nomeFilm = NomeDeiFilm(movies)
+console.log(nomeFilm)
 
 /* ESERCIZIO 12 (filter)
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
+console.log(" ")
+console.log("Esercizio 12")
+let filmMillennio = []
+//dove applicare il filter vb non fa nulla, lo ho allungato con if ma tanto fa la stessa cosa
+function movieMillennio(movies) {
+  let array = []
+  movies.map(movie => {
+    if(parseFloat(movie.Year) >= 2000) {
+      array.push(movie)
+    }
+  })
+  return array
+}
+
+filmMillennio = movieMillennio(movies)
+console.log(filmMillennio)
+
+
 
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
+
+console.log(" ")
+console.log("Esercizio 12")
 
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
