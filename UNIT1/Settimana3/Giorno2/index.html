@@ -104,6 +104,7 @@
        Scrivi una funzione che cambi il testo dei p figli di un div
       */
 
+      //in questo caso dovevamo fare all per farlo a tutti i div
       const changePcontent = function (text) {
         document.querySelector('div p').textContent = text
       }
@@ -113,7 +114,7 @@
       /* ESERCIZIO 4
        Scrivi una funzione che cambi la proprietà href di ogni link (tranne quello nel footer) con il valore https://www.google.com
       */
-
+        //il controllo si poteva fare anche tramite selettore css
       const changeUrls = function () {
         const links = document.querySelectorAll('a');   //va a prendere tutte le a
           links.forEach(link => {                        //va clicare tutti i tag a
@@ -159,6 +160,8 @@
         const firstList = document.getElementById('firstList')
         firstList.style.display = 'none'
       }
+
+      //lui qui intendeva remove, eliminare completamente la lista. Sono punti di vista
 
       hideFirstUl()
 
@@ -206,6 +209,8 @@
        La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
     */
 
+
+    //come ha fatto il prof è molto più semplice come concetto
       const generateTable = function () {
         const products = [         //andiamo ad inserire dei dati
         { imgSrc: 'https://via.placeholder.com/50x50', name: 'Prodotto 1', quantity: 3, price: 10 },
