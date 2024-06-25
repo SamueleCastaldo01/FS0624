@@ -155,32 +155,60 @@
        Scrivi una funzione che faccia scomparire la prima lista non ordinata
     */
 
-      const hideFirstUl = function () {}
+      const hideFirstUl = function () {
+        const firstList = document.getElementById('firstList')
+        firstList.style.display = 'none'
+      }
+
+      hideFirstUl()
 
       /* ESERCIZIO 8 
        Scrivi una funzione che renda verde il background di ogni lista non ordinata
       */
 
-      const paintItGreen = function () {}
+      const paintItGreen = function () {
+        const allList = document.querySelectorAll('ul');
+        allList.forEach(list => {
+          list.style.backgroundColor = 'green'
+        })
+      }
+
+      paintItGreen()
 
       /* ESERCIZIO 9
        Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
       */
 
-      const makeItClickable = function () {}
+      const makeItClickable = function () {
+        const h1Element = document.querySelector('h1');   //vado a prendere h1
+      let currentText = h1Element.textContent.trim(); // vado a prendere il testo attuale andando ad annulare gli spazi
+      if (currentText.length > 0) {                   //controllo
+        const newText = currentText.slice(0, -1);      //rimuovi l'ultima lettera
+        h1Element.textContent = newText;               //infine aggiorna il testo
+      }
+      }
+
+      document.querySelector('h1').addEventListener('click', makeItClickable);     //evento con il click su h1 allora si attiva la funzione di sopra
 
       /* ESERCIZIO 10
        Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
       */
 
-      const revealFooterLink = function () {}
+      const revealFooterLink = function () {
+        linkUrl = document.querySelector('footer a').href        //andiamo a prendere il link dell'footer
+        alert('Questo è il link: ' + linkUrl)
+      }
 
+      document.querySelector('footer').addEventListener('click', revealFooterLink)
+      
       /* ESERCIZIO 11
        Crea una funzione che crei una tabella nell'elemento con id "tableArea". 
        La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
     */
 
-      const generateTable = function () {}
+      const generateTable = function () {
+
+      }
 
       /* ESERCIZIO 12
        Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
