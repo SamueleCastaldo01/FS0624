@@ -27,8 +27,8 @@ function addTodo(todoText) {
         list.removeChild(todoItem);
     });
 
-    todoItem.appendChild(todoTextElement);   //aggiunge il paragrafo al div
     todoItem.appendChild(deleteButton);      //aggiunge il bottone al div
+    todoItem.appendChild(todoTextElement);   //aggiunge il paragrafo al div
 
     list.appendChild(todoItem);             //aggiunge il div appena creato al div list dell'html
 }
