@@ -50,5 +50,7 @@ function addTodo(todoText) {
 
 //idea per prendere tramite array.
 //quello di creare un array. Ed ogni volta che viene chiamata la funzione per aggiungere deve prendere il valore dell'input e metterlo in questo array
-//poi devo creare la funzione button delete dove va a prendere l'id per cancellare, e anche per mettere la linea
+//poi devo creare la funzione button delete dove va a prendere l'id indice dell'array per cancellare, e anche per mettere la linea
+//bisogna mettere onclick del button con il suo indice nel button, per chiamare la funzione per elimnare quel'indice specifico
+//dovrei fare un ciclo for oppure un foreach per prendere gli elementi del array e falli visualizzare all'interno del'html
 //posso vedere anche il codie del prof per prendere spunto
