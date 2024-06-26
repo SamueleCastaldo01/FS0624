@@ -46,3 +46,9 @@ function addTodo(todoText) {
 
     list.appendChild(todoItem);             //aggiunge il div appena creato al div list dell'html
 }
+
+
+//idea per prendere tramite array.
+//quello di creare un array. Ed ogni volta che viene chiamata la funzione per aggiungere deve prendere il valore dell'input e metterlo in questo array
+//poi devo creare la funzione button delete dove va a prendere l'id per cancellare, e anche per mettere la linea
+//posso vedere anche il codie del prof per prendere spunto
