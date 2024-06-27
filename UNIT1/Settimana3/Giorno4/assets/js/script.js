@@ -147,9 +147,7 @@ randGenerate.addEventListener('click', generaNumeroCasuale)
 //******************************************************************************************************+ */
 // Funzione per generare le cartelle, prende input il numero delle cartelle
 function generaCartelle(numCartelle) {
-    divCartelle.innerHTML = '';
 
-    const cartelle = [];
     gCartelle = []
 
     for (let i = 0; i < numCartelle; i++) {
