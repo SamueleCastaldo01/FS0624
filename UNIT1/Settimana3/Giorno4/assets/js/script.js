@@ -116,6 +116,7 @@ function generaNumeroCasuale() {
 
     if (tombola.every(obj => obj.flag === true)) {   //controllo per non fare andare in loop infinto il while
         console.log("il tombolone è stato riempito")
+        alert("Il gioco è finito");
         return;   //controlla se tutti i flag sono true
     }
 
