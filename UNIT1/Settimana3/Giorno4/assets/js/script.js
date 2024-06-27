@@ -91,6 +91,10 @@ const tombola = [
     { id: 90, flag: false, nome: "'A Paura" }
 ];
 
+//errori da aggiustare, se aggiungo dopo le cartelle non sono colorate
+//i numeri nelle cartelle non sono univoci
+
+
 //variabili per il tombolone
 const divTombolone = document.getElementById('divTombolone')
 const randNumber = document.getElementById('randNumber')   //paragrafo
