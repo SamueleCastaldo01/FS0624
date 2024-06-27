@@ -150,6 +150,8 @@ function generaCartelle(numCartelle) {
 
     gCartelle = []
 
+    //una cosa da aggiungere e che i numeri casuali all'interno non si devono ripetere per ogni cartella
+
     for (let i = 0; i < numCartelle; i++) {
         gCartelle.push([]);
         // Generazione caselle della cartella (esempio con 15 caselle per cartella)
