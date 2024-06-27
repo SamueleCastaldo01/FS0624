@@ -104,7 +104,7 @@ const genCartelle = document.getElementById("genCartelle")  //bottone
 let gCartelle = []   //mi serve per le cartelle, array di array di array di oggetti
 
 
-showerTabbelone()
+showTabbelone()
 
 //generate numero casuale***************************************************************
 function generaNumeroCasuale() {
@@ -136,8 +136,8 @@ function generaNumeroCasuale() {
 
     randNumber.innerText = numeroCasuale;
 
-    showerTabbelone()
-    showerCartelle()
+    showTabbelone()
+    showCartelle()
     console.log(gCartelle)
 }
 
@@ -161,7 +161,7 @@ function generaCartelle(numCartelle) {
         }
         console.log(gCartelle)
     }
-    showerCartelle()
+    showCartelle()
 }
 
 
@@ -181,7 +181,7 @@ genCartelle.addEventListener('click', function (event) { //si attiva dal form
 
 //********************************************************************************************* */
 //******************************************************************************************** */
-function showerTabbelone() {
+function showTabbelone() {
     divTombolone.innerHTML = '';
 
     //costruzione del tabellone
@@ -207,8 +207,8 @@ function showerTabbelone() {
 }
 
 
-//Mostra il tabbelone************************************************ */
-function showerCartelle() {
+//Mostra le cartelle************************************************ */
+function showCartelle() {
     divCartelle.innerHTML = '';
 
     const cartel = [];
