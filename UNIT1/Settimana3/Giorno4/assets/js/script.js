@@ -96,10 +96,12 @@ const randNumber = document.getElementById('randNumber')
 const randGenerate = document.getElementById('randGenerate')
 let numeroCasuale
 
+
+
 function generaNumeroCasuale() {
     let index = 0
 
-    if(tombola.every(obj => obj.flag === true)) {   //controllo per non fare andare in loop infinto il while
+    if (tombola.every(obj => obj.flag === true)) {   //controllo per non fare andare in loop infinto il while
         console.log("il tombolone è stato riempito")
         return;   //controlla se tutti i flag sono true
     }
@@ -117,8 +119,27 @@ function generaNumeroCasuale() {
 
 }
 
-randGenerate, addEventListener('click', generaNumeroCasuale)
+randGenerate.addEventListener('click', generaNumeroCasuale)
 
+function showerTabbelone() {
+    for (let i = 0; i < tombola.length; i++) {
+        const divNum = document.createElement('div')
+        divNum.classList.add('divNum');
+        const pNum = document.createElement('h4')
+        const nameNum = document.createElement('p')
+
+        pNum.textContent = tombola[i].id
+        nameNum.textContent = tombola[i].nome
+
+        divNum.appendChild(pNum);
+        divNum.appendChild(nameNum);
+        divTombolone.appendChild(divNum);
+
+    }
+
+}
+
+showerTabbelone()
 
 
 
