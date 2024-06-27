@@ -91,12 +91,20 @@ const tombola = [
     { id: 90, flag: false, nome: "'A Paura" }
 ];
 
+//variabili per il tombolone
 const divTombolone = document.getElementById('divTombolone')
-const randNumber = document.getElementById('randNumber')
-const randGenerate = document.getElementById('randGenerate')
+const randNumber = document.getElementById('randNumber')   //paragrafo
+const randGenerate = document.getElementById('randGenerate')  //bottone
 let numeroCasuale
 
+//variabili per creare le cartelle
+const divCartelle = document.getElementById('divCartelle')
+const nCartelle = document.getElementById("nCartelle")  //input
+const genCartelle = document.getElementById("genCartelle")  //bottone
+let gCartelle = []
 
+
+showerTabbelone()
 
 function generaNumeroCasuale() {
     let index = 0
@@ -114,14 +122,32 @@ function generaNumeroCasuale() {
 
 
     tombola[index].flag = true                       //trasforma l'indice in vero
-    randNumber.innerText = numeroCasuale;
-    console.log(tombola)
 
+    //verifica del colore delle cartelle trasforma il flag in true per poi applicarci il colore
+    for(let i = 0; i < gCartelle.length; i++) {
+        for(let j = 0; j <gCartelle[i].length; j++) {
+            if(gCartelle[i][j].id == numeroCasuale) {  //va a trovare l'indice per mettere il flag a true
+                gCartelle[i][j].flag = true
+                console.log(gCartelle[i][j].id)
+            }
+        }
+    }
+
+    randNumber.innerText = numeroCasuale;
+
+    showerTabbelone()
+    showerCartelle()
+    console.log(gCartelle)
 }
 
 randGenerate.addEventListener('click', generaNumeroCasuale)
 
+
+//******************************************************************************************** */
 function showerTabbelone() {
+    divTombolone.innerHTML = '';
+
+ //costruzione del tabellone
     for (let i = 0; i < tombola.length; i++) {
         const divNum = document.createElement('div')
         divNum.classList.add('divNum');
@@ -131,44 +157,80 @@ function showerTabbelone() {
         pNum.textContent = tombola[i].id
         nameNum.textContent = tombola[i].nome
 
+        if(tombola[i].flag == true) {
+            divNum.style.borderColor = "#CB2376"
+            pNum.style.color = '#CB2376'
+            nameNum.style.color = '#CB2376'
+        }
+
         divNum.appendChild(pNum);
         divNum.appendChild(nameNum);
         divTombolone.appendChild(divNum);
-
     }
-
 }
 
-showerTabbelone()
+//dovrei fare un for dentro un for, dove il primo è il numero di cartelle, il secondo sono i numeri casuali generati fino a 15
+//quindi poi dovra creare un array di array, dove ogni indice sta per nCartella, e ogni elemento avvrà un array di numeri casuali
+
+//questi numeri casuali dovranno essere confrontati con il tombolone
+
+//************************************************ */
+function showerCartelle() {
+    divCartelle.innerHTML = '';
+
+
+        for(let i = 0; i < gCartelle.length; i++) {
+            for(let j = 0; j <gCartelle[i].length; j++) {
+                const divNum = document.createElement('div')
+                divNum.classList.add('divNumCart');
+                const pNum = document.createElement('h4')
+
+                pNum.textContent = gCartelle[i][j].id
+
+                if(gCartelle[i][j].flag == true) {    //verifica il colore
+                    divNum.style.borderColor = "#CB2376"
+                    pNum.style.color = '#CB2376'
+                }
+
+                divNum.appendChild(pNum);
+                divCartelle.appendChild(divNum);
+            }
+        }
+}
+
+//******************************************************************************************************+ */
+// Funzione per generare le cartelle, prende input il numero delle cartelle
+function generaCartelle(numCartelle) {
+    divCartelle.innerHTML = ''; 
+
+    const cartelle = [];
+    gCartelle = []
+
+    for (let i = 0; i < numCartelle; i++) {
+        gCartelle.push([]);  
+        // Generazione caselle della cartella (esempio con 15 caselle per cartella)
+        for (let j = 0; j < 15; j++) {
+            let numeroCasuale = Math.floor(Math.random() * 90) + 1;
+            gCartelle[i].push({id: numeroCasuale, flag: false});
+        }
+        console.log(gCartelle)
+    }
+    showerCartelle()
+}
 
 
 
+genCartelle.addEventListener('click', function(event) { //si attiva dal form
+    event.preventDefault();
 
+    const numCartelle = parseInt(nCartelle.value); 
 
+    if (isNaN(numCartelle) || numCartelle <= 0) {  //controllo
+        alert("Inserisci un numero valido di cartelle.");
+        return;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    generaCartelle(numCartelle);  
+});
 
 
