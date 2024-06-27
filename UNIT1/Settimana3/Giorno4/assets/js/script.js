@@ -106,6 +106,7 @@ let gCartelle = []   //mi serve per le cartelle, array di array di array di ogge
 
 showerTabbelone()
 
+//generate numero casuale***************************************************************
 function generaNumeroCasuale() {
     let index = 0
 
@@ -143,6 +144,42 @@ function generaNumeroCasuale() {
 randGenerate.addEventListener('click', generaNumeroCasuale)
 
 
+//******************************************************************************************************+ */
+// Funzione per generare le cartelle, prende input il numero delle cartelle
+function generaCartelle(numCartelle) {
+    divCartelle.innerHTML = '';
+
+    const cartelle = [];
+    gCartelle = []
+
+    for (let i = 0; i < numCartelle; i++) {
+        gCartelle.push([]);
+        // Generazione caselle della cartella (esempio con 15 caselle per cartella)
+        for (let j = 0; j < 15; j++) {
+            let numeroCasuale = Math.floor(Math.random() * 90) + 1;
+            gCartelle[i].push({ id: numeroCasuale, flag: false });
+        }
+        console.log(gCartelle)
+    }
+    showerCartelle()
+}
+
+
+//evento del form per generare le cartelle
+genCartelle.addEventListener('click', function (event) { //si attiva dal form
+    event.preventDefault();
+
+    const numCartelle = parseInt(nCartelle.value);
+
+    if (isNaN(numCartelle) || numCartelle <= 0) {  //controllo
+        alert("Inserisci un numero valido di cartelle.");
+        return;
+    }
+
+    generaCartelle(numCartelle);
+});
+
+//********************************************************************************************* */
 //******************************************************************************************** */
 function showerTabbelone() {
     divTombolone.innerHTML = '';
@@ -203,39 +240,5 @@ function showerCartelle() {
     }
 }
 
-//******************************************************************************************************+ */
-// Funzione per generare le cartelle, prende input il numero delle cartelle
-function generaCartelle(numCartelle) {
-    divCartelle.innerHTML = '';
-
-    const cartelle = [];
-    gCartelle = []
-
-    for (let i = 0; i < numCartelle; i++) {
-        gCartelle.push([]);
-        // Generazione caselle della cartella (esempio con 15 caselle per cartella)
-        for (let j = 0; j < 15; j++) {
-            let numeroCasuale = Math.floor(Math.random() * 90) + 1;
-            gCartelle[i].push({ id: numeroCasuale, flag: false });
-        }
-        console.log(gCartelle)
-    }
-    showerCartelle()
-}
-
-
-
-genCartelle.addEventListener('click', function (event) { //si attiva dal form
-    event.preventDefault();
-
-    const numCartelle = parseInt(nCartelle.value);
-
-    if (isNaN(numCartelle) || numCartelle <= 0) {  //controllo
-        alert("Inserisci un numero valido di cartelle.");
-        return;
-    }
-
-    generaCartelle(numCartelle);
-});
 
 
