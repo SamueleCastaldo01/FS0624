@@ -101,7 +101,7 @@ let numeroCasuale
 const divCartelle = document.getElementById('divCartelle')
 const nCartelle = document.getElementById("nCartelle")  //input
 const genCartelle = document.getElementById("genCartelle")  //bottone
-let gCartelle = []
+let gCartelle = []   //mi serve per le cartelle, array di array di array di oggetti
 
 
 showerTabbelone()
@@ -124,9 +124,9 @@ function generaNumeroCasuale() {
     tombola[index].flag = true                       //trasforma l'indice in vero
 
     //verifica del colore delle cartelle trasforma il flag in true per poi applicarci il colore
-    for(let i = 0; i < gCartelle.length; i++) {
-        for(let j = 0; j <gCartelle[i].length; j++) {
-            if(gCartelle[i][j].id == numeroCasuale) {  //va a trovare l'indice per mettere il flag a true
+    for (let i = 0; i < gCartelle.length; i++) {
+        for (let j = 0; j < gCartelle[i].length; j++) {
+            if (gCartelle[i][j].id == numeroCasuale) {  //va a trovare l'indice per mettere il flag a true
                 gCartelle[i][j].flag = true
                 console.log(gCartelle[i][j].id)
             }
@@ -147,7 +147,7 @@ randGenerate.addEventListener('click', generaNumeroCasuale)
 function showerTabbelone() {
     divTombolone.innerHTML = '';
 
- //costruzione del tabellone
+    //costruzione del tabellone
     for (let i = 0; i < tombola.length; i++) {
         const divNum = document.createElement('div')
         divNum.classList.add('divNum');
@@ -157,7 +157,7 @@ function showerTabbelone() {
         pNum.textContent = tombola[i].id
         nameNum.textContent = tombola[i].nome
 
-        if(tombola[i].flag == true) {
+        if (tombola[i].flag == true) {
             divNum.style.borderColor = "#CB2376"
             pNum.style.color = '#CB2376'
             nameNum.style.color = '#CB2376'
@@ -169,49 +169,54 @@ function showerTabbelone() {
     }
 }
 
-//dovrei fare un for dentro un for, dove il primo è il numero di cartelle, il secondo sono i numeri casuali generati fino a 15
-//quindi poi dovra creare un array di array, dove ogni indice sta per nCartella, e ogni elemento avvrà un array di numeri casuali
 
-//questi numeri casuali dovranno essere confrontati con il tombolone
-
-//************************************************ */
+//Mostra il tabbelone************************************************ */
 function showerCartelle() {
     divCartelle.innerHTML = '';
 
+    const cartel = [];
 
-        for(let i = 0; i < gCartelle.length; i++) {
-            for(let j = 0; j <gCartelle[i].length; j++) {
-                const divNum = document.createElement('div')
-                divNum.classList.add('divNumCart');
-                const pNum = document.createElement('h4')
+    for (let i = 0; i < gCartelle.length; i++) {
+        const divCartella = document.createElement('div');
+        divCartella.classList.add('cartella'); 
 
-                pNum.textContent = gCartelle[i][j].id
+        const divNumeri = document.createElement('div'); // Div per contenere tutti i divNum
+        divNumeri.classList.add('divNumeriCart'); // Classe per stile CSS
 
-                if(gCartelle[i][j].flag == true) {    //verifica il colore
-                    divNum.style.borderColor = "#CB2376"
-                    pNum.style.color = '#CB2376'
-                }
+        for (let j = 0; j < gCartelle[i].length; j++) {
+            const divNum = document.createElement('div')
+            divNum.classList.add('divNumCart');
+            const pNum = document.createElement('h4')
 
-                divNum.appendChild(pNum);
-                divCartelle.appendChild(divNum);
+            pNum.textContent = gCartelle[i][j].id
+
+            if (gCartelle[i][j].flag == true) {    //verifica il colore
+                divNum.style.borderColor = "#CB2376"
+                pNum.style.color = '#CB2376'
             }
+
+            divNum.appendChild(pNum);
+            divNumeri.appendChild(divNum);
         }
+        divCartella.appendChild(divNumeri); // Aggiungi divNumeri alla cartella
+        divCartelle.appendChild(divCartella); // Aggiungi la cartella al divCartelle
+    }
 }
 
 //******************************************************************************************************+ */
 // Funzione per generare le cartelle, prende input il numero delle cartelle
 function generaCartelle(numCartelle) {
-    divCartelle.innerHTML = ''; 
+    divCartelle.innerHTML = '';
 
     const cartelle = [];
     gCartelle = []
 
     for (let i = 0; i < numCartelle; i++) {
-        gCartelle.push([]);  
+        gCartelle.push([]);
         // Generazione caselle della cartella (esempio con 15 caselle per cartella)
         for (let j = 0; j < 15; j++) {
             let numeroCasuale = Math.floor(Math.random() * 90) + 1;
-            gCartelle[i].push({id: numeroCasuale, flag: false});
+            gCartelle[i].push({ id: numeroCasuale, flag: false });
         }
         console.log(gCartelle)
     }
@@ -220,17 +225,17 @@ function generaCartelle(numCartelle) {
 
 
 
-genCartelle.addEventListener('click', function(event) { //si attiva dal form
+genCartelle.addEventListener('click', function (event) { //si attiva dal form
     event.preventDefault();
 
-    const numCartelle = parseInt(nCartelle.value); 
+    const numCartelle = parseInt(nCartelle.value);
 
     if (isNaN(numCartelle) || numCartelle <= 0) {  //controllo
         alert("Inserisci un numero valido di cartelle.");
         return;
     }
 
-    generaCartelle(numCartelle);  
+    generaCartelle(numCartelle);
 });
 
 
