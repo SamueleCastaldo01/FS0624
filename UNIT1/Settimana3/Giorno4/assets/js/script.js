@@ -89,23 +89,37 @@ const tombola = [
     { id: 88, flag: false, nome: "'E Casecavalle" },
     { id: 89, flag: false, nome: "'A Vecchia" },
     { id: 90, flag: false, nome: "'A Paura" }
-  ];
-  
+];
+
 const divTombolone = document.getElementById('divTombolone')
 const randNumber = document.getElementById('randNumber')
 const randGenerate = document.getElementById('randGenerate')
 let numeroCasuale
 
-function generaNumeroCasuale(tombolone) {
-    numeroCasuale =  Math.floor(Math.random() * 90) + 1;
-    if(numeroCasuale) {
+function generaNumeroCasuale() {
+    let index = 0
 
+    if(tombola.every(obj => obj.flag === true)) {   //controllo per non fare andare in loop infinto il while
+        console.log("il tombolone è stato riempito")
+        return;   //controlla se tutti i flag sono true
     }
-    randNumber.innerText = numeroCasuale;
-    
-  }
 
-  randGenerate,addEventListener('click', generaNumeroCasuale)
+    do {
+        numeroCasuale = Math.floor(Math.random() * 90) + 1;
+        index = tombola.findIndex(obj => obj.id === numeroCasuale);  //vado a trovare l'indice
+
+    } while (tombola[index].flag === true)   //fa il ciclo per trovare sempre un numero diverso
+
+
+    tombola[index].flag = true                       //trasforma l'indice in vero
+    randNumber.innerText = numeroCasuale;
+    console.log(tombola)
+
+}
+
+randGenerate, addEventListener('click', generaNumeroCasuale)
+
+
 
 
 
