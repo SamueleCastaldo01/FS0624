@@ -41,7 +41,7 @@ header nav ul {
     flex-direction: row;
 }
 header nav li {
-    margin-left: 20px;
+    margin: 0px 10px;
     list-style: none;
 }
 header nav li a {
@@ -217,12 +217,125 @@ footer a {
 
 /*Mobile +++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 @media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px;
+    }
+    header div img {
+        width: 90%;
+    }
+    header div p {
+        margin-top: 10px;
+    }
+    header nav {
+        margin-left: 0px;
+        margin-top: 20px;
+    }
+    article h1 {
+        font-size: 4rem;
+    }
+    section input {
+        width: 50%;
+    }
+    table {
+        margin: 0px;
+        width: 80%;
+        margin-bottom: 30px;
+        margin-top: 10px;
+    }
+    .divVideo {
+        flex-direction: column;
+    }
+    .divArti {
+        flex-direction: column;
+    }
+    footer {
+        font-size: 1.2em;
+    }
 
   }
 
 
 
 /*Tablet +++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-@media screen and (max-width: 1200px) {
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px;
+    }
+    header div img {
+        width: 90%;
+    }
+    header div p {
+        margin-top: 10px;
+    }
+    header nav {
+        margin-left: 0px;
+        margin-top: 20px;
+    }
+    article h1 {
+        font-size: 6rem;
+    }
+    section {
+        margin-bottom: 10px;
+    }
+    table {
+        margin: 0 auto;
+        width: 80%;
+        margin-bottom: 30px;
+        margin-top: 10px;
+    }
+    .divVideo {
+        flex-direction: column;
+    }
+    .divArti {
+        flex-direction: column;
+    }
+    footer {
+        font-size: 1.2em;
+    }
 
+  }
+
+  /*STAMPA +++++++++++++++++++++++++++++++++++++++++++++++++++*/
+  @media print {
+    body {
+        padding: 15px;
+    }
+    header {
+        display: none;
+    }
+    main {
+        border: none;
+        box-shadow: none;
+    }
+    article h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    p {
+        font-size: 1.8em;
+    }
+    li {
+        font-size: 1.8em;
+    }
+    .divVideo {
+        display: none;
+    }
+    table {
+        margin: 0px;
+    }
+    table caption {
+        font-size: 1.5em;
+    }
+    aside {
+        display: none;
+    }
+    footer {
+        display: none;
+    }
   }
