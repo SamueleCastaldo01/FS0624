@@ -34,7 +34,7 @@ header {
 
 .divButton {
   position: fixed;
-  top: 700px;
+  top: 450px;
   right: 0px;
   margin-right: 10px;
   display: flex;
@@ -126,6 +126,18 @@ main {
   main {
     padding: 2em;
   }
+
+  .divButton {
+    top: 20px;
+    right: 0px;
+    z-index: 201;
+  }
+  
+  .butUp {
+    position: fixed;
+    top: 600px;
+  }
+  
 }
 
 section {
