@@ -32,6 +32,13 @@ header {
   z-index: 200;
 }
 
+.tagIcon {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  color: #cdcdcd;
+}
+
 .divButton {
   position: fixed;
   top: 450px;
@@ -384,6 +391,7 @@ aside div {
   border: 1px solid #c3c3c3;
   margin-bottom: 1em;
   padding: 1em;
+  position: relative;
 }
 
 @media screen and (min-width: 1200px) {
