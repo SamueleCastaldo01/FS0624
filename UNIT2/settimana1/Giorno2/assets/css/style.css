@@ -27,6 +27,9 @@ header {
   box-shadow: 0 3px 3px #444;
   margin-bottom: 1.5em;
   padding: 2em 1.5em;
+  position: sticky;
+  top: 0;
+  z-index: 200;
 }
 
 @media screen and (min-width: 800px) {
@@ -121,7 +124,6 @@ h1 {
   line-height: 1.2;
   font-weight: bold;
   letter-spacing: -0.03em;
-  margin-bottom: 0.7em;
 }
 
 p,
@@ -165,11 +167,23 @@ h1 + p {
     font-size: 1.4rem;
     font-weight: 700;
   }
+  .imgUnder{
+    position: relative;
+    bottom: 10px;
+    width: 430px;
+    z-index: 0;
+  }
 }
 
 @media screen and (min-width: 700px) {
   h1 {
     font-size: 3.6rem;
+  }
+  .imgUnder{
+    position: relative;
+    bottom: 10px;
+    width: 530px;
+    z-index: 0;
   }
 }
 
@@ -180,6 +194,14 @@ h1 + p {
   section {
     border-radius: 20px;
   }
+
+  .imgUnder{
+    position: relative;
+    bottom: 10px;
+    left: 460px;
+    width: 520px;
+    z-index: 0;
+  }
 }
 
 .imgLeft {
@@ -187,6 +209,7 @@ h1 + p {
   border: 4px solid #00a0c6;
   outline: 4px solid #a02571;
   padding: 3px;
+  float: left;
 }
 ul,
 ol {
