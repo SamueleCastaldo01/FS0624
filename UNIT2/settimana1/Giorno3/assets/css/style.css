@@ -197,4 +197,13 @@ main h1 {
     main {
         margin-left: 250px;
     }
+    .our {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .our .divImg {
+        width: 300%;
+        margin-right: 10px;
+    }
+    
 }
