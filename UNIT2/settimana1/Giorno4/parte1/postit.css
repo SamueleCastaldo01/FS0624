@@ -1,0 +1,125 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #666666;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Indie Flower";
+}
+
+h2 {
+    font-size: 30px;
+    margin: 5px;
+}
+
+.divPost{
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+}
+
+.divPost div {
+    display: flex;
+    justify-content: space-around;
+    gap: 34px;
+}
+
+.postYellow, .postGreen, .postViolet {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 90px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.postYellow {
+    background-color: #F8F8C6;
+}
+
+.postGreen {
+    background-color: #C9F9CB;
+}
+
+.postViolet {
+    background-color: #C5C5F0;
+}
+
+.post1 {
+    transform: rotate(-5deg);
+    transition: all 1s linear;
+}
+
+.post1:hover {
+    transform: rotate(-360deg);
+}
+
+.post2 {
+    transform: rotate(5deg);
+    transition: all 0.5s linear;
+}
+
+.post2:hover {
+    transform: rotate(0deg);
+}
+
+.post3 {
+    transform: rotate(-10deg);
+    transition: all 0.5s linear;
+}
+
+.post3:hover {
+    transform: rotate(0deg);
+    transform: scale(1.1);
+}
+
+.post4 {
+    transform: rotate(7deg);
+    transition: all 0.5s linear;
+}
+
+.post4:hover {
+    transform: rotate(0deg);
+}
+
+.post5 {
+    transform: rotate(-5deg);
+    transition: all 0.5s linear;
+}
+
+.post5:hover {
+    transform: rotate(0deg);
+    transform: scale(0.9);
+}
+
+.post6 {
+    transform: rotate(-7deg);
+    transition: all 1s linear;
+}
+
+.post6:hover {
+    transform: rotate(360deg);
+}
+
+.post7 {
+    transform: rotate(-3deg);
+    transition: all 0.5s linear;
+}
+
+.post7:hover {
+    transform: rotate(0deg);
+    opacity: 0.7;
+}
+
+.post8 {
+    transform: rotate(4deg);
+    transition: all 0.5s linear;
+}
+
+.post8:hover {
+    transform: rotate(0deg);
+}
