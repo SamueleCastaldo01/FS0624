@@ -25,9 +25,64 @@ body {
 
 #testoAlternato {
     border: 2px solid black;
-    padding: 10px;
+    padding: 30px 150px 30px 30px;
 }
 
 .parole {
     color: #6A889C;
+}
+
+#testoAlternato {
+    text-align: center;
+}
+
+.parole {
+    display: inline-block;
+    position: relative;
+    height: 1em; /* Altezza degli elementi <i> */
+}
+
+.parole i {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    animation: slideFade 6s ease-in-out infinite;
+}
+
+.parole i:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.parole i:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.parole i:nth-child(3) {
+    animation-delay: 4s;
+}
+
+@keyframes slideFade {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    10% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    30% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    40% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
 }
