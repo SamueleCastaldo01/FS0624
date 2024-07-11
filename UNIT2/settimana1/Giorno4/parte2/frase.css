@@ -25,7 +25,7 @@ body {
 
 #testoAlternato {
     border: 2px solid black;
-    padding: 30px 150px 30px 30px;
+    padding: 30px 180px 30px 30px;
 }
 
 .parole {
@@ -39,11 +39,13 @@ body {
 .parole {
     display: inline-block;
     position: relative;
-    height: 1em; /* Altezza degli elementi <i> */
+    height: 0.9em; /* Altezza degli elementi <i> */
 }
 
 .parole i {
     display: inline-block;
+    text-align: left;
+    width: 300px;
     position: absolute;
     top: 0;
     left: 0;
