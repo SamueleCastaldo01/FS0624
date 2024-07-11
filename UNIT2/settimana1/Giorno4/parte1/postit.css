@@ -49,12 +49,12 @@ h2 {
     background-color: #C5C5F0;
 }
 
-.post1 {
+#post1 {
     transform: rotate(-5deg);
     transition: all 1s linear;
 }
 
-.post1:hover {
+#post1:hover {
     transform: rotate(-360deg);
 }
 
