@@ -48,4 +48,13 @@ main .box3 {
 main .avatarCard {
   width: 35px;
   height: 35px;
+}
+main .butLeft {
+  left: 11%;
+}
+main .butRight {
+  right: 11%;
+}
+main .butWi {
+  background-color: white;
 }/*# sourceMappingURL=style.css.map */
