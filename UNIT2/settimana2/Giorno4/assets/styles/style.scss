@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #F5F4F8;
+}
+
+header {
+    .avatar {
+        width: 50px;
+        height: 50px;
+    }
+    .divIcon {
+        background-color: #F5F4F8;
+    }
+
+    .headerIcon {
+        font-size: 19px;
+    }
+}
+
+main {
+    .box1 {
+        display: flex;
+        justify-content: center;
+        padding-left: 14%;
+        padding-right: 14%;
+    }
+
+    .cont1Color{
+        background-color: #7550FE;
+    }
+
+    .padColLef {
+        padding-left: 20%;
+    }
+    .padColRight {
+        padding-right: 20%;
+    }
+}

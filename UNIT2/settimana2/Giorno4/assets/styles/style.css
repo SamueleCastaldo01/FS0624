@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #F5F4F8;
+}
+
+header .avatar {
+  width: 50px;
+  height: 50px;
+}
+header .divIcon {
+  background-color: #F5F4F8;
+}
+header .headerIcon {
+  font-size: 19px;
+}
+
+main .box1 {
+  display: flex;
+  justify-content: center;
+  padding-left: 14%;
+  padding-right: 14%;
+}
+main .cont1Color {
+  background-color: #7550FE;
+}
+main .padColLef {
+  padding-left: 20%;
+}
+main .padColRight {
+  padding-right: 20%;
+}/*# sourceMappingURL=style.css.map */
