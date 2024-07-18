@@ -1,6 +1,6 @@
 * {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
 }
 
 body {
@@ -32,4 +32,12 @@ main .padColLef {
 }
 main .padColRight {
   padding-right: 20%;
+}
+main .iconBlock1 {
+  color: #C28135;
+  font-size: 20px;
+}
+main .divIconBlock1 {
+  padding: 20px;
+  background-color: #FFEEDA;
 }/*# sourceMappingURL=style.css.map */
