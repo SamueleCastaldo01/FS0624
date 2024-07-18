@@ -44,4 +44,8 @@ main .divIconBlock1 {
 main .box3 {
   padding-left: 14%;
   padding-right: 14%;
+}
+main .avatarCard {
+  width: 35px;
+  height: 35px;
 }/*# sourceMappingURL=style.css.map */
