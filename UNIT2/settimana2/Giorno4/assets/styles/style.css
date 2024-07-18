@@ -57,4 +57,15 @@ main .butRight {
 }
 main .butWi {
   background-color: white;
+}
+main .fotPadL {
+  margin-left: 14%;
+}
+main .fotPadR {
+  padding-right: 14%;
+}
+
+footer .box3 {
+  padding-left: 14%;
+  padding-right: 14%;
 }/*# sourceMappingURL=style.css.map */
