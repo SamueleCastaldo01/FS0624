@@ -2,9 +2,6 @@ const nome = document.getElementById("name");  //input
 const nomeValore = document.getElementById("nomeValore")  //p nome 
 const contatore = document.getElementById("contatore")  //p contatore
 
-let contValue = sessionStorage.getItem("contatore") || 0; //vado a predere il valore attuale, altrimenti inizia da 0
-let nomeP = localStorage.getItem("nome") || "";  //controllo
-
 
 function saveButton() {
     const nameValue = nome.value; //va a prendere il valore
@@ -19,12 +16,15 @@ function deleteButton() {
 }
 
 
-//contatore
-function startCounter() {
+//init
+function init() {
+    let contValue = sessionStorage.getItem("contatore") || 0; //vado a predere il valore attuale, altrimenti inizia da 0
+    let nomeP = localStorage.getItem("nome") || "";  //controllo
     nomeValore.innerText = nomeP; //p nome dell'input
     contatore.innerText = contValue; // p contatore
 
-    intervalId = setInterval(() => {
+    //contatore
+    setInterval(() => {
         contValue++;                 //aggiorna
         contatore.innerText = contValue;   //DOM
         sessionStorage.setItem("contatore", contValue);  //aggiorna lo storage
@@ -33,4 +33,4 @@ function startCounter() {
 
 
 // Avvia il contatore non appena la pagina è completamente caricata
-window.onload = startCounter;
+window.onload = init;
