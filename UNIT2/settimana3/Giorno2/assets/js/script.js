@@ -1,17 +1,13 @@
-const nome = document.getElementById("name");
-const nomeValore = document.getElementById("nomeValore")
+const nome = document.getElementById("name");  //input
+const nomeValore = document.getElementById("nomeValore")  //p nome 
+const contatore = document.getElementById("contatore")  //p contatore
 
-const contatore = document.getElementById("contatore")
 let contValue = sessionStorage.getItem("contatore") || 0; //vado a predere il valore attuale, altrimenti inizia da 0
-
 let nomeP = localStorage.getItem("nome") || "";  //controllo
-nomeValore.innerText = nomeP;
 
-console.log(localStorage.getItem("nome"))
 
 function saveButton() {
     const nameValue = nome.value; //va a prendere il valore
-    
     localStorage.setItem("nome", nameValue)   //lo salva localmente
     nomeValore.innerText = nameValue;
     nome.value = ""
@@ -25,6 +21,9 @@ function deleteButton() {
 
 //contatore
 function startCounter() {
+    nomeValore.innerText = nomeP; //p nome dell'input
+    contatore.innerText = contValue; // p contatore
+
     intervalId = setInterval(() => {
         contValue++;                 //aggiorna
         contatore.innerText = contValue;   //DOM
