@@ -119,17 +119,19 @@ function renderCarello() {
 
     // Aggiungi intestazione e totale
     listaCarello.innerHTML = `
-        <h5>Carello</h5>
-        <p class="text-black">Totale: <span id="totCarello">${totale.toFixed(2)}</span></p>
+        <div class="position-sticky top-0 z-3 bg-light py-2">
+            <h5>Carello</h5>
+            <p class="text-black">Totale: <span id="totCarello">${totale.toFixed(2)}</span></p>
+        </div>
     `;
 
     // Aggiungi elementi del carrello
     carello.forEach((book, index) => {
         totale += parseFloat(book.price);
         const carelloHTML = `
-            <div class="card mt-4" style="width: 18rem;">
+            <div class="card mt-4" style="width: 10rem;">
                 <div class="card-body">
-                  <h5 class="card-title">${book.title}</h5>
+                  <h6 class="card-title">${book.title}</h6>
                   <p class="card-text">$${book.price}</p>
                   <p class="card-text">${book.category}</p>
                   <a href="#" class="btn btn-danger delete-carello" data-title="${book.title}">Remove Carello</a>
