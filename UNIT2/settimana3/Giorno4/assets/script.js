@@ -9,6 +9,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const url = 'https://api.pexels.com/v1/search?query=cars';
     const urlsecondary = 'https://api.pexels.com/v1/search?query=bike';
 
+
+//********************************** */ Per il bottone primario
+    function init() {
+        fetch("https://api.pexels.com/v1/search?query=cats", {
+            headers: {
+                'Authorization': apiKey
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            const photos = data.photos;
+            rowCard.innerHTML = '';
+            
+            photos.forEach(photo => {
+                rowCard.innerHTML += createCard(photo);
+                console.log(photo)
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching photos:', error);
+        });
+    }
+    init()
+
+
     //********************************** */ Per il bottone primario
     loadImages.addEventListener("click", () => {
         fetch(url, {
@@ -96,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return `
             <div class="col-md-4" id="${photo.id}">
               <div class="card mb-4 shadow-sm">
-                <a href="${photo.url}">
+                <a href="./details.html?eventId=${photo.id}&eventImg=${photo.src.landscape}&name=${photo.photographer}&nameUrl=${photo.photographer_url}">
                     <img
                     src="${photo.src.landscape}"
                     class="bd-placeholder-img card-img-top"
