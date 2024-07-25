@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadImages = document.getElementById("loadImages");
     const loadSecondaryImages = document.getElementById("loadSecondaryImages");
     const rowCard = document.getElementById("rowCard");
+    const inputSearch = document.getElementById("inputSearch")
+    const buttonSearch = document.getElementById("buttonSearch")
 
     const url = 'https://api.pexels.com/v1/search?query=cars';
     const urlsecondary = 'https://api.pexels.com/v1/search?query=bike';
@@ -21,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             photos.forEach(photo => {
                 rowCard.innerHTML += createCard(photo);
+                console.log(photo)
             });
         })
         .catch(error => {
@@ -60,16 +63,49 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+
+        //********************************** search
+    buttonSearch.addEventListener("click", () => {
+        const valueInp = inputSearch.value
+        console.log(valueInp)
+        const urlciao = 'https://api.pexels.com/v1/search?query=' +valueInp
+        fetch(urlciao, {
+            headers: {
+                'Authorization': apiKey
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            const photos = data.photos;
+            rowCard.innerHTML = '';
+            
+            photos.forEach(photo => {
+                rowCard.innerHTML += createCard(photo);
+                console.log(photo)
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching photos:', error);
+        });
+    })
+
+
+
+
     function createCard(photo) {
         return `
             <div class="col-md-4" id="${photo.id}">
               <div class="card mb-4 shadow-sm">
-                <img
-                  src="${photo.src.landscape}"
-                  class="bd-placeholder-img card-img-top"
-                />
+                <a href="${photo.url}">
+                    <img
+                    src="${photo.src.landscape}"
+                    class="bd-placeholder-img card-img-top"
+                    />
+                </a>
                 <div class="card-body">
-                  <h5 class="card-title">${photo.photographer}</h5>
+                  <a href="${photo.url}">
+                    <h5 class="card-title">${photo.photographer}</h5>
+                  </a>
                   <p class="card-text">
                     ${photo.alt}
                   </p>
