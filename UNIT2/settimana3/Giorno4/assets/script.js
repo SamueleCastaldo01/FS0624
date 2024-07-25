@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const rowCard = document.getElementById("rowCard");
     const inputSearch = document.getElementById("inputSearch")
     const buttonSearch = document.getElementById("buttonSearch")
+    const modalBody = document.getElementById("modalBody")
 
     const url = 'https://api.pexels.com/v1/search?query=cars';
     const urlsecondary = 'https://api.pexels.com/v1/search?query=bike';
@@ -79,14 +80,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    //********************************** Evento per il punsate Hide
-    rowCard.addEventListener("click", (event) => {
-        if (event.target && event.target.classList.contains("buttonHide")) {  //un piccolo controllo
-            const photoId = event.target.getAttribute('data-photo-id');  //vado a prendere l'id passatto come attributo
-            const card = document.getElementById(photoId);
-            card.style.display = 'none';   //infine cambio stile
-        }
+    //********************************** Evento per il pulsante view
+    rowCard.addEventListener('click', (event) => {
+            const photoSrc = event.target.getAttribute('data-photo-id');
+
+            // Svuota il contenuto del modalBody
+            modalBody.innerHTML = '';
+
+            // Crea e inserisci l'elemento immagine
+            modalBody.innerHTML = `
+                <img src="${photoSrc}" class="img-fluid" alt="Image">
+            `;
+
     });
+
+
+        //********************************** Evento per il punsate Hide
+        rowCard.addEventListener("click", (event) => {
+            if (event.target && event.target.classList.contains("buttonHide")) {  //un piccolo controllo
+                const photoId = event.target.getAttribute('data-photo-id');  //vado a prendere l'id passatto come attributo
+                const card = document.getElementById(photoId);
+                card.style.display = 'none';   //infine cambio stile
+            }
+        });
 
 
         //********************************** search
@@ -136,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   </p>
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      <button type="button" data-bs-toggle="modal" data-bs-target="#divModal" class="btn btn-sm btn-outline-secondary divModal" data-photo-id="${photo.src.landscape}">View</button>
                       <button type="button" class="btn btn-sm btn-outline-secondary buttonHide" data-photo-id="${photo.id}">Hide</button>
                     </div>
                     <small class="text-muted">${photo.id}</small>
