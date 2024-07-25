@@ -13,30 +13,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //********************************** */ Per il bottone primario
     function init() {
-        fetch("https://api.pexels.com/v1/search?query=cats", {
-            headers: {
-                'Authorization': apiKey
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            const photos = data.photos;
-            rowCard.innerHTML = '';
-            
-            photos.forEach(photo => {
-                rowCard.innerHTML += createCard(photo);
-                console.log(photo)
-            });
-        })
-        .catch(error => {
-            console.error('Error fetching photos:', error);
-        });
+        fet("https://api.pexels.com/v1/search?query=cats")
     }
     init()
 
-
     //********************************** */ Per il bottone primario
     loadImages.addEventListener("click", () => {
+        fet(url)
+    });
+
+    //********************************** Per il bottone secondario
+    loadSecondaryImages.addEventListener("click", () => {
+        fet(urlsecondary)
+    });
+
+
+  //********************************** Funzione per far il get
+    function fet(url) {
         fetch(url, {
             headers: {
                 'Authorization': apiKey
@@ -55,28 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => {
             console.error('Error fetching photos:', error);
         });
-    });
+    }
 
-    //********************************** Per il bottone secondario
-    loadSecondaryImages.addEventListener("click", () => {
-        fetch(urlsecondary, {
-            headers: {
-                'Authorization': apiKey
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            const photos = data.photos;
-            rowCard.innerHTML = '';
-            
-            photos.forEach(photo => {
-                rowCard.innerHTML += createCard(photo);
-            });
-        })
-        .catch(error => {
-            console.error('Error fetching photos:', error);
-        });
-    });
 
 
 
@@ -129,7 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Error fetching photos:', error);
         });
     })
-
 
 
 
