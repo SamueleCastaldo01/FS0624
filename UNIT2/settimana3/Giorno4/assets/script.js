@@ -137,7 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return `
             <div class="col-md-4" id="${photo.id}">
               <div class="card mb-4 shadow-sm">
-                <a href="./details.html?eventId=${photo.id}&eventImg=${photo.src.landscape}&name=${photo.photographer}&nameUrl=${photo.photographer_url}">
+                <a href="./details.html?avgColor=${photo.avg_color.slice(1)}&eventId=${photo.id}&eventImg=${photo.src.landscape}&name=${photo.photographer}&nameUrl=${photo.photographer_url}">
                     <img
                     src="${photo.src.landscape}"
                     class="bd-placeholder-img card-img-top"
