@@ -4,6 +4,7 @@ import { Mynav } from './components/MyNav';
 import { Myfooter } from './components/Myfooter';
 import { Welcome } from './components/Welcome';
 import { AllTheBooks } from './components/AllTheBooks';
+import fantaBook from './books/fantasy.json'; 
 
 function App() {
   return (
@@ -11,7 +12,17 @@ function App() {
       <Mynav />
 
       <Welcome />
-      <AllTheBooks />
+
+      <div className='d-flex flex-wrap justify-content-between p-5'>
+        {fantaBook.map((book) => {
+          return (
+            <AllTheBooks />
+          )
+        })}
+      </div>
+     
+
+
 
       <Myfooter />
     </div>
