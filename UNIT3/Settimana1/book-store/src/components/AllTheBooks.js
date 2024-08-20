@@ -5,7 +5,7 @@ export function AllTheBooks(props) {
 
     return(
         <>
-            <Card className='mt-4' style={{ width: '18rem' }}>
+            <Card key={props.asin} className='mt-4' style={{ width: '18rem' }}>
             <Card.Img variant="top" src={props.img} />
             <Card.Body>
                 <Card.Title>{props.title}</Card.Title>

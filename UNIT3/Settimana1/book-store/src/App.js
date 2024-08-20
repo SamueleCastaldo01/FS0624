@@ -16,7 +16,7 @@ function App() {
       <div className='d-flex flex-wrap justify-content-between p-5'>
         {fantaBook.map((book) => {
           return (
-            <AllTheBooks title={book.title} img={book.img} price={book.price}/>
+            <AllTheBooks title={book.title} img={book.img} price={book.price} asin={book.asin}/>
           )
         })}
       </div>
