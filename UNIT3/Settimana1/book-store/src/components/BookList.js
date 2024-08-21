@@ -1,6 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import TextField from '@mui/material/TextField';
+import { SingleBook } from './singleBook';
 import { useState } from 'react';
 
 export function BookList(props) {
@@ -20,16 +21,10 @@ export function BookList(props) {
         {
             filteredBooks.map((book) => {
                 return(
-                    <Card key={book.asin} className='mt-4' style={{ width: '18rem' }}>
-                    <Card.Img variant="top" src={book.img} />
-                    <Card.Body>
-                        <Card.Title>{book.title}</Card.Title>
-                        <Card.Text>
-                        ${book.price}
-                        </Card.Text>
-                        <Button variant="primary">Compra</Button>
-                    </Card.Body>
-                    </Card>
+                    <SingleBook title={book.title}
+                    img={book.img}
+                     price={book.price} asin={book.asin}/>
+
                 )
             })
         }
