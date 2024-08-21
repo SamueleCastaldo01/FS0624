@@ -1,5 +1,3 @@
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 import TextField from '@mui/material/TextField';
 import { SingleBook } from './singleBook';
 import { useState } from 'react';
@@ -9,7 +7,9 @@ export function BookList(props) {
 
         // Funzione per filtrare i libri in base al campo di ricerca
         const filteredBooks = props.arrayBooks.filter((book) =>
-            book.title.toLowerCase().includes(inpRicerca.toLowerCase())
+            book.title.toLowerCase().includes(inpRicerca.toLowerCase()) ||
+            book.category.toLowerCase().includes(inpRicerca.toLowerCase())
+
         );
 
     return(
@@ -24,7 +24,6 @@ export function BookList(props) {
                     <SingleBook title={book.title}
                     img={book.img}
                      price={book.price} asin={book.asin}/>
-
                 )
             })
         }
