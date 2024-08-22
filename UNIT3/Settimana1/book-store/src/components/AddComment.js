@@ -48,6 +48,7 @@ class AddComment extends Component {
                   elementId: ""
                 },
               })
+              this.props.onCommentAdded(); //ricarica i commenti subito dopo aver inserito
             } else {
               alert('riprova più tardi')
               throw new Error('errore!')
@@ -82,7 +83,7 @@ class AddComment extends Component {
 
 
                     
-                    <Button type="submit" variant="inserisci">Outlined</Button>
+                    <Button type="submit" variant="inserisci">Invia</Button>
                 </form>
              
             </>
