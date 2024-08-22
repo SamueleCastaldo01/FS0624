@@ -24,7 +24,7 @@ class CommentList extends Component {
 
                 {this.props.comments.map((comment)=> {
                     return(
-                        <SingleComment comment={comment.comment} rate={comment.rate}/>
+                        <SingleComment onCommentDeleted={this.props.onCommentAdded} comment={comment.comment} rate={comment.rate} _id={comment._id}/>
                     )
                 })}
                 

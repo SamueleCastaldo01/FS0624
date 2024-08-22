@@ -55,7 +55,7 @@ class CommentArea extends Component {
     render() {
         return(
             <>
-                <CommentList comments={this.state.comments} isLoading={this.state.isLoading} isError={this.state.isError} asin={this.props.asin}/>
+                <CommentList onCommentAdded={this.fetchComments} comments={this.state.comments} isLoading={this.state.isLoading} isError={this.state.isError} asin={this.props.asin}/>
                 <AddComment asin={this.props.asin} onCommentAdded={this.fetchComments}/>
              
             </>
