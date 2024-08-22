@@ -4,6 +4,7 @@ import { Mynav } from './components/MyNav';
 import { Myfooter } from './components/Myfooter';
 import { Welcome } from './components/Welcome';
 import { BookList } from './components/BookList';
+import CommentArea from './components/CommentArea';
 import fantaBook from './books/fantasy.json'; 
 import historyBook from './books/history.json'; 
 import horrorBook from './books/horror.json'; 

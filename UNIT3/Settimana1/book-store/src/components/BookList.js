@@ -21,9 +21,11 @@ export function BookList(props) {
         {
             filteredBooks.map((book) => {
                 return(
-                    <SingleBook title={book.title}
-                    img={book.img}
-                     price={book.price} asin={book.asin}/>
+                    <>
+                        <SingleBook title={book.title}
+                        img={book.img}
+                        price={book.price} asin={book.asin}/>              
+                     </>
                 )
             })
         }

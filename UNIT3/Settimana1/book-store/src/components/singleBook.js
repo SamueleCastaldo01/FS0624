@@ -1,5 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import CommentArea from './CommentArea';
 import { useState } from 'react';
 
 export function SingleBook(props) {
@@ -28,6 +29,11 @@ export function SingleBook(props) {
                 <Button variant="primary">Compra</Button>
             </Card.Body>
         </Card>
+
+        { selected &&
+            <CommentArea />
+        }
+     
         </>
     )
 }
