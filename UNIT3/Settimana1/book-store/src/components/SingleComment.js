@@ -5,11 +5,10 @@ class SingleComment extends Component {
     render() {
         return(
         <>
-                 <div className="d-flex justify-content-between">
+                 <div className="d-flex justify-content-between" key={this.props.asin}>
                             <p>{this.props.comment}</p>
-                            <p>{this.props.rate}</p>
-                            
-                        </div>
+                            <p>{this.props.rate}</p>      
+                </div>
         </>
         )
     }

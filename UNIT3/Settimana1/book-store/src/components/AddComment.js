@@ -81,8 +81,6 @@ class AddComment extends Component {
                         />
                     </div>
 
-
-                    
                     <Button type="submit" variant="inserisci">Invia</Button>
                 </form>
              
