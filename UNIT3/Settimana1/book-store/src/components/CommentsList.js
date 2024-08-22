@@ -10,6 +10,11 @@ class CommentList extends Component {
       }
 
 
+      componentDidMount() {
+        this.fetchComments();
+      }
+
+
       fetchComments = () => {
         // recuperiamo tramite una chiamata API le nostre prenotazioni
         fetch("https://striveschool-api.herokuapp.com/api/comments/" + this.props.asin, {
@@ -57,7 +62,15 @@ class CommentList extends Component {
         console.log(this.props.asin)
         return(
             <>
-                
+                {this.state.comments.map((comment)=> {
+                    return(
+                        <div className="d-flex justify-content-between">
+                            <p>{comment.comment}</p>
+                            <p>{comment.rate}</p>
+                            
+                        </div>
+                    )
+                })}
                 
             </>
         )
