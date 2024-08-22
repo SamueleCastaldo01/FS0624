@@ -32,7 +32,7 @@ export function SingleBook(props) {
         </Card>
 
             {selected && 
-                <CommentArea />
+                <CommentArea asin={props.asin}/>
             }
   
         </div>

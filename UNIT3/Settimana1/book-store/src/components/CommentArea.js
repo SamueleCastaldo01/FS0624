@@ -1,4 +1,5 @@
 import { Component } from "react";
+import CommentList from "./CommentsList";
 
 class CommentArea extends Component {
 
@@ -6,7 +7,8 @@ class CommentArea extends Component {
         return(
             <>
                 <h5>Commenti</h5>
-                
+                <CommentList asin={this.props.asin}/>
+
             </>
         )
     }
