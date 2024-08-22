@@ -1,4 +1,5 @@
 import { Component } from "react";
+import SingleComment from "./SingleComment";
 
 class CommentList extends Component {
     state = {
@@ -64,11 +65,7 @@ class CommentList extends Component {
             <>
                 {this.state.comments.map((comment)=> {
                     return(
-                        <div className="d-flex justify-content-between">
-                            <p>{comment.comment}</p>
-                            <p>{comment.rate}</p>
-                            
-                        </div>
+                        <SingleComment comment={comment.comment} rate={comment.rate}/>
                     )
                 })}
                 
