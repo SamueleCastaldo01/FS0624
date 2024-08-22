@@ -1,14 +1,15 @@
 import { Component } from "react";
 import CommentList from "./CommentsList";
+import AddComment from "./AddComment";
 
 class CommentArea extends Component {
 
     render() {
         return(
             <>
-                <h5>Commenti</h5>
                 <CommentList asin={this.props.asin}/>
-
+                <AddComment asin={this.props.asin}/>
+             
             </>
         )
     }

@@ -38,12 +38,6 @@ class CommentList extends Component {
             this.setState({
               comments: arrayOfComments,
               isLoading: false,
-              // salva l'array di prenotazioni nello stato, prendendo il posto
-              // dell'array vuoto con cui avevamo inizializzato il componente
-    
-              // !!! REGOLA FONDAMENTALE DI REACT !!!
-              // DOPO OGNI CAMBIO DI STATO O OGNI CAMBIO DI PROPS,
-              // RENDER() VIENE RE-INVOCATO
             })
           })
           .catch((err) => {
@@ -63,6 +57,7 @@ class CommentList extends Component {
         console.log(this.props.asin)
         return(
             <>
+            <h5>Commenti</h5>
                 {this.state.comments.map((comment)=> {
                     return(
                         <SingleComment comment={comment.comment} rate={comment.rate}/>
