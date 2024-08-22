@@ -13,27 +13,28 @@ export function SingleBook(props) {
 
     return(
         <>
-        <Card
-            key={props.asin}
-            className="mt-4"
-            style={{
-                width: '18rem',
-                border: selected ? '2px solid red' : '1px solid #ddd',
-            }}
-            onClick={handlerSelected}
-        >
-            <Card.Img variant="top" src={props.img} />
-            <Card.Body>
-                <Card.Title>{props.title}</Card.Title>
-                <Card.Text>${props.price}</Card.Text>
-                <Button variant="primary">Compra</Button>
-            </Card.Body>
-        </Card>
+        <div>
+            <Card
+                key={props.asin}
+                className="mt-4"
+                style={{
+                    width: '18rem',
+                    border: selected ? '2px solid red' : '1px solid #ddd',
+                }}
+                onClick={handlerSelected}
+            >
+                <Card.Img variant="top" src={props.img} />
+                <Card.Body>
+                    <Card.Title>{props.title}</Card.Title>
+                    <Card.Text>${props.price}</Card.Text>
+                    <Button variant="primary">Compra</Button>
+                </Card.Body>
+            </Card>
 
-        { selected &&
-            <CommentArea />
-        }
-     
+            { selected &&
+                <CommentArea />
+            }
+        </div>
         </>
     )
 }
