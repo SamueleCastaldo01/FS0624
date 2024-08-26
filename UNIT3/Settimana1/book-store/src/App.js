@@ -16,11 +16,14 @@ import scifiBook from './books/scifi.json';
 
 // CommentArea asin   come props
 //commentArea ->addCOmment
-//           ->CommentList
+//   //        ->CommentList
 
 //---------------------------------
+//struttura nuova
 //booklist  -> singleBook
 //  //      ->commentArea
+
+
 
 
 
