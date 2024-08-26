@@ -14,7 +14,7 @@ export function BookList(props) {
 
     );
 
-    // Funzione per gestire la selezione del libro
+    // Funzione per gestire la selezione del libro. Viene richiamata da singleBook
     const handleBookSelect = (asin) => {
         setSelectedAsin(asin === selectedAsin ? null : asin); // Deseleziona se clicchi sullo stesso libro
     };

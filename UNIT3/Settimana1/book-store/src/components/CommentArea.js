@@ -16,6 +16,14 @@ class CommentArea extends Component {
         this.fetchComments();
       }
 
+      componentDidUpdate(prevProps) {
+        // Controlla se l'asin è cambiato rispetto al precedente
+        if (prevProps.asin !== this.props.asin) {
+            this.setState({ isLoading: true, comments: [] }); // Reset state prima di una nuova fetch
+            this.fetchComments();
+        }
+    }
+
 
       fetchComments = () => {
         // recuperiamo tramite una chiamata API le nostre prenotazioni
