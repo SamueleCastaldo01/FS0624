@@ -10,6 +10,20 @@ import horrorBook from './books/horror.json';
 import romanceBook from './books/romance.json'; 
 import scifiBook from './books/scifi.json'; 
 
+//struttura vecchia
+// booklist ->singleBook -> CommentArea
+//dentro singleBook state selected.
+
+// CommentArea asin   come props
+//commentArea ->addCOmment
+//           ->CommentList
+
+//---------------------------------
+//booklist  -> singleBook
+//  //      ->commentArea
+
+
+
 function App() {
   return (
     <div className="App">

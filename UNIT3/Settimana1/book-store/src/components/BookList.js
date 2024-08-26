@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 export function BookList(props) {
     const [inpRicerca, setInpRicerca] = useState("")
-    const [selectedAsin, setSelectedAsin] = useState(null);
+    const [selectedAsin, setSelectedAsin] = useState("");
 
     // Funzione per filtrare i libri in base al campo di ricerca
     const filteredBooks = props.arrayBooks.filter((book) =>
@@ -16,12 +16,13 @@ export function BookList(props) {
 
     // Funzione per gestire la selezione del libro. Viene richiamata da singleBook
     const handleBookSelect = (asin) => {
-        setSelectedAsin(asin === selectedAsin ? null : asin); // Deseleziona se clicchi sullo stesso libro
+        setSelectedAsin(asin === selectedAsin ? "" : asin); // Deseleziona se clicchi sullo stesso libro
     };
 
     return(
         <>
         <div className='row'>
+            {/**colonna di sinistra */}
             <div className='col-6'>
             <div>
             <TextField id="outlined-basic" label="Ricerca" variant="outlined" onChange={(e) => {setInpRicerca(e.target.value)}}/>
@@ -43,7 +44,7 @@ export function BookList(props) {
 
             {/*****************Colonna di destra */}
             <div className='col-6'>
-                {selectedAsin && <CommentArea asin={selectedAsin} />} {/* Mostra CommentArea solo se un libro è selezionato */}
+                {selectedAsin && <CommentArea asin={selectedAsin}/> } {/* Mostra CommentArea solo se un libro è selezionato */}
             </div>
 
 
