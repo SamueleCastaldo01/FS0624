@@ -1,41 +1,26 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { useState } from 'react';
-import CommentArea from './CommentArea';
 
-export function SingleBook(props) {
-
-    const [selected, setSelected] = useState(false);
-
-    const handlerSelected = () => {
-        setSelected(!selected)
-    }
+export function SingleBook({ title, img, price, asin, onSelect, isSelected }) {
 
     return(
-        <>
         <div>
-        <Card
-            key={props.asin}
-            className="mt-4"
-            style={{
-                width: '18rem',
-                border: selected ? '2px solid red' : '1px solid #ddd',
-            }}
-            onClick={handlerSelected}
-        >
-            <Card.Img variant="top" src={props.img} />
-            <Card.Body>
-                <Card.Title>{props.title}</Card.Title>
-                <Card.Text>${props.price}</Card.Text>
-                <Button variant="primary">Compra</Button>
-            </Card.Body>
-        </Card>
-
-            {selected && 
-                <CommentArea asin={props.asin}/>
-            }
-  
+            <Card
+                key={asin}
+                className="mt-4"
+                style={{
+                    width: '18rem',
+                    border: isSelected ? '2px solid red' : '1px solid #ddd',
+                }}
+                onClick={() => onSelect(asin)} // Notifica la selezione al componente padre
+            >
+                <Card.Img variant="top" src={img} />
+                <Card.Body>
+                    <Card.Title>{title}</Card.Title>
+                    <Card.Text>${price}</Card.Text>
+                    <Button variant="primary">Compra</Button>
+                </Card.Body>
+            </Card>
         </div>
-        </>
     )
 }
