@@ -27,19 +27,19 @@ export function BookList(props) {
             <div>
             <TextField id="outlined-basic" label="Ricerca" variant="outlined" onChange={(e) => {setInpRicerca(e.target.value)}}/>
         </div>
-        <div className='d-flex flex-wrap justify-content-between p-5'>
-        {
-            filteredBooks.map((book) => {
-                return(
-                    <>
-                        <SingleBook title={book.title}
-                        img={book.img}
-                        price={book.price} asin={book.asin} onSelect={handleBookSelect} isSelected={book.asin === selectedAsin}/>              
-                     </>
-                )
-            })
-        }
-        </div>
+                <div className='d-flex flex-wrap justify-content-between p-5'>
+                {
+                    filteredBooks.map((book) => {
+                        return(
+                            <>
+                                <SingleBook title={book.title}
+                                img={book.img}
+                                price={book.price} asin={book.asin} onSelect={handleBookSelect} isSelected={book.asin === selectedAsin}/>              
+                            </>
+                        )
+                    })
+                }
+                </div>
             </div>
 
             {/*****************Colonna di destra */}
