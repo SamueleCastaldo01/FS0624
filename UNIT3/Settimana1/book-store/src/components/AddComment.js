@@ -1,31 +1,26 @@
-import { Component } from "react";
+import { Component, useState } from "react";
 import { Container, Row, Col, Form, Alert } from 'react-bootstrap'
 import { TextField,Button } from "@mui/material";
 
-class AddComment extends Component {
-    state = {
-        comments: {
-          // lo stato iniziale del componente
-          // che in questo rappresenta anche lo stato iniziale del form
-          comment: "",
-          rate: "",
-          elementId: this.props.asin,
-        },
-      }
+function AddComment(props) {    
+    const [comments, setComments] = useState({
+      comment: "",
+      rate: "",
+      elementId: props.asin,
+    })
+    
 
 
-      handleChange = (e, property) => {   //questo è per i campi di input
-        this.setState({
-          comments: {
-            ...this.state.comments,
-            [property]: e.target.value,
-          },
+      const handleChange = (e, property) => {   //questo è per i campi di input
+        setComments({
+          ...comments,
+          [property]: e.target.value,
         })
       }
 
 
 
-      handleSubmit = (e) => {   //questo sarebbe il post
+      const handleSubmit = (e) => {   //questo sarebbe il post
         e.preventDefault()
         // ora inviamo i dati alle API di EPICODE per salvare la prenotazione
         // inviamo i dati tramite una chiamata con metodo 'POST'
@@ -35,20 +30,18 @@ class AddComment extends Component {
             'Content-Type': 'application/json',
             "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmM3MmZhZTQzYTU2ODAwMTU4ZWMzZDMiLCJpYXQiOjE3MjQzMjk5MDMsImV4cCI6MTcyNTUzOTUwM30.s1jeWc-FEqZ5QaFDvzmqrtKBMPEXKi8Lmut4MZbfvV4"
           },
-          body: JSON.stringify(this.state.comments),
+          body: JSON.stringify(comments),
         })
           .then((response) => {
             if (response.ok) {
               // svuota i campi
-              this.setState({
-                comments: {
-                  // lo stato iniziale del componente
-                  comment: "",
-                  rate: "",
-                  elementId: ""
-                },
+              setComments({
+                comment: "",
+                rate: "",
+                elementId: ""
               })
-              this.props.onCommentAdded(); //ricarica i commenti subito dopo aver inserito
+
+              props.onCommentAdded(); //ricarica i commenti subito dopo aver inserito
             } else {
               alert('riprova più tardi')
               throw new Error('errore!')
@@ -61,23 +54,23 @@ class AddComment extends Component {
     
 
 
-    render() {
+
         return(
             <>
                 <h5>Inserisci un Commento</h5>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={handleSubmit}>
                     <div>
                         <TextField className="w-100" id="outlined-basic" label="Commento" variant="outlined" required
                             onChange={(e) => {
-                            this.handleChange(e, 'comment')}}
-                            value={this.state.comments.comment}
+                            handleChange(e, 'comment')}}
+                            value={comments.comment}
                         />
                     </div>
                     <div>
                         <TextField className="w-100 mb-2" id="outlined-basic" label="Rate" type="number" variant="outlined" required
                             onChange={(e) => {
-                            this.handleChange(e, 'rate')}}
-                            value={this.state.comments.rate}
+                            handleChange(e, 'rate')}}
+                            value={comments.rate}
                         />
                     </div>
 
@@ -86,7 +79,6 @@ class AddComment extends Component {
              
             </>
         )
-    }
 }
 
 export default AddComment;

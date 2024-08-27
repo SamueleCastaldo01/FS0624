@@ -1,8 +1,6 @@
-import { Component } from "react";
+function SingleComment(props) {
 
-class SingleComment extends Component {
-
-  handleDelete = (commentId) => {
+  const handleDelete = (commentId) => {
     fetch(`https://striveschool-api.herokuapp.com/api/comments/${commentId}`, {
       method: 'DELETE',
       headers: {
@@ -12,7 +10,7 @@ class SingleComment extends Component {
       .then((response) => {
         if (response.ok) {
           //eliminato con sucesso
-          this.props.onCommentDeleted(); // aggiorna la lista dei commenti
+          props.onCommentDeleted(); // aggiorna la lista dei commenti
         } else {
           alert('Errore nella cancellazione del commento, riprova più tardi.');
           throw new Error('Errore durante la cancellazione');
@@ -23,17 +21,16 @@ class SingleComment extends Component {
       });
   }
 
-  render() {
+
     return (
       <>
-        <div className="d-flex justify-content-between" key={this.props._id}>
-          <p>{this.props.comment}</p>
-          <p>{this.props.rate}</p>
-          <button onClick={() => this.handleDelete(this.props._id)}>delete</button>
+        <div className="d-flex justify-content-between" key={props._id}>
+          <p>{props.comment}</p>
+          <p>{props.rate}</p>
+          <button onClick={() => handleDelete(props._id)}>delete</button>
         </div>
       </>
     );
-  }
 }
 
 export default SingleComment;
