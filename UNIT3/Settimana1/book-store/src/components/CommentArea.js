@@ -1,33 +1,23 @@
-import { Component } from "react";
+import {useState, useEffect } from "react";
 import CommentList from "./CommentsList";
 import AddComment from "./AddComment";
 
-class CommentArea extends Component {
-    state = {
-        comments: [], // so già che recupererò dalle API un array di prenotazioni
-        // per questo motivo inizializzo la proprietà dello stato in cui le salverò
-        // come un ARRAY VUOTO
-        isLoading: true,
-        isError: false,
-      }
+function CommentArea (props) {
+      const [comments, setComments] = useState([])
+      const [isLoading, setIsLoading] = useState(true)
+      const [isError, setIsError] = useState(false)
+    
 
+    useEffect(() => {
+      setIsLoading(true)
+      setComments([])
+      fetchComments();
+    },[props.asin])
+    
 
-      componentDidMount() {
-        this.fetchComments();
-      }
-
-      componentDidUpdate(prevProps) {
-        // Controlla se l'asin è cambiato rispetto al precedente
-        if (prevProps.asin !== this.props.asin) {
-            this.setState({ isLoading: true, comments: [] }); // Reset state prima di una nuova fetch
-            this.fetchComments();
-        }
-    }
-
-
-      fetchComments = () => {
+      const fetchComments = () => {
         // recuperiamo tramite una chiamata API le nostre prenotazioni
-        fetch("https://striveschool-api.herokuapp.com/api/comments/" + this.props.asin, {
+        fetch("https://striveschool-api.herokuapp.com/api/comments/" + props.asin, {
             headers: {
             "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmM3MmZhZTQzYTU2ODAwMTU4ZWMzZDMiLCJpYXQiOjE3MjQzMjk5MDMsImV4cCI6MTcyNTUzOTUwM30.s1jeWc-FEqZ5QaFDvzmqrtKBMPEXKi8Lmut4MZbfvV4"
             }
@@ -44,31 +34,25 @@ class CommentArea extends Component {
           })
           .then((arrayOfComments) => {
             console.log('PRENOTAZIONI RECUPERATE DAL SERVER', arrayOfComments)
-            this.setState({
-              comments: arrayOfComments,
-              isLoading: false,
-            })
+            setComments(arrayOfComments)
+            setIsLoading(false)
           })
           .catch((err) => {
             // finale cattivo :( problema di rete?
             console.log('ERRORE NEL RECUPERO DATI (internet)?', err)
             // spegniamo lo spinner anche qua!
-            this.setState({
-              isLoading: false, // spegniamo lo spinner
-              isError: true, // accendiamo l'errore
-            })
+            setIsLoading(false)
+            setIsError(true)
           })
       }
 
-    render() {
         return(
             <>
-                <CommentList onCommentAdded={this.fetchComments} comments={this.state.comments} isLoading={this.state.isLoading} isError={this.state.isError} asin={this.props.asin}/>
-                <AddComment asin={this.props.asin} onCommentAdded={this.fetchComments}/>
+                <CommentList onCommentAdded={fetchComments} comments={comments} isLoading={isLoading} isError={isError} asin={props.asin}/>
+                <AddComment asin={props.asin} onCommentAdded={fetchComments}/>
              
             </>
         )
-    }
 }
 
 export default CommentArea;
