@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 export function SingleBook({ title, img, price, asin, onSelect, isSelected }) {
   return (
     <div>
-      <Card
+      <Card data-testid="card"
         key={asin}
         className="mt-4"
         style={{
