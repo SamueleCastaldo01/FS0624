@@ -1,16 +1,14 @@
 import { Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
+import { AddFav } from '../redux/actions';
 
 const Job = ({ data }) => {
   const dispatch = useDispatch();
 
   const handelAdd = () => {
     console.log("sono entrato")
-    dispatch({
-      type: 'ADD_FAVORITES',
-      payload: data
-    })
+    dispatch(AddFav(data))
   }
 
   return (

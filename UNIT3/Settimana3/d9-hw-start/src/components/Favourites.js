@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux"
 import { Link } from 'react-router-dom'
+import { RemoveFav } from "../redux/actions";
 
 function Favorites() {
     const dispatch = useDispatch();
@@ -15,10 +16,7 @@ function Favorites() {
                 <div key={i}>
                     <Link to={`/${fav.company_name}`}>{fav.company_name}</Link>
                     <button onClick={() => {
-                        dispatch({
-                            type: "REMOVE_FAVORITES",
-                            payload: fav._id
-                        })
+                        dispatch(RemoveFav(fav._id))
                     }}>Remove</button>
                 </div>
             )
