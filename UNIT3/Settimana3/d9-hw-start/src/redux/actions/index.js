@@ -1,6 +1,7 @@
 export const REMOVE_FAVORITES = "REMOVE_FAVORITES"
 export const ADD_FAVORITES = "ADD_FAVORITES"
 export const GET_JOB_LIST = "GET_JOB_LIST"
+export const GET_JOB_LIST_ERROR = "GET_JOB_LIST_ERROR"
 
 
 export const RemoveFav = (sel) => {
@@ -31,9 +32,15 @@ export const getJobList = (query) => {
           });
         } else {
           alert("Error fetching results");
+          dispatch({
+            type: GET_JOB_LIST_ERROR,
+          });
         }
       } catch (error) {
         console.log(error);
+        dispatch({
+          type: GET_JOB_LIST_ERROR,
+        });
       }
     };
   };
