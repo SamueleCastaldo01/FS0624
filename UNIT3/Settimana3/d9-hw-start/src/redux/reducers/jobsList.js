@@ -9,7 +9,7 @@ const JobsList = (state = initialState, action) => {
         case GET_JOB_LIST:
             return {
               ...state,
-              content: action.payload, // cioè l'array di libri
+              content: action.payload, 
             }
         default: {
           return state;
