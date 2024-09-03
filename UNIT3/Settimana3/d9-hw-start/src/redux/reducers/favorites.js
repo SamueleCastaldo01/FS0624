@@ -1,21 +1,16 @@
-import { ADD_FAVORITES } from "../actions";
-import { REMOVE_FAVORITES } from "../actions";
+import { ADD_FAVORITES, REMOVE_FAVORITES } from "../actions";
 
 const initialState = {
-  favorites: {
     content: [],
-  },
 };
 
-const mainReducer = (state = initialState, action) => {
+const FavoritesRed = (state = initialState, action) => {
   switch (action.type) {
     case ADD_FAVORITES:
       const newState = {
         ...state,
-        favorites: {
-          ...state.favorites,
-          content: [...state.favorites.content, action.payload],
-        },
+          content: [...state.content, action.payload],
+
       };
       // Aggiungi il console.log per verificare lo stato
       console.log("Azione:", action);
@@ -26,10 +21,7 @@ const mainReducer = (state = initialState, action) => {
       case REMOVE_FAVORITES:
         const delState = {
             ...state,
-            favorites: {
-              ...state.favorites,
-              content: state.favorites.content.filter((fav) => fav._id !== action.payload),
-            }
+              content: state.content.filter((fav) => fav._id !== action.payload),
         }
         return delState;
 
@@ -41,4 +33,4 @@ const mainReducer = (state = initialState, action) => {
   }
 };
 
-export default mainReducer;
+export default FavoritesRed;

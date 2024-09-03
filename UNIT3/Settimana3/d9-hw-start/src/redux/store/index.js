@@ -1,11 +1,14 @@
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import FavoritesRed from '../reducers/favorites'; // Importa automaticamente l'index.js
+import JobsList from '../reducers/jobsList';
 
-import { configureStore } from '@reduxjs/toolkit'
-import mainReducer from '../reducers'
-// il fatto che il file dentro la cartella reducers si chiami proprio "index.js"
-// semplifica l'import, perchè si può omettere
+const bigReducer = combineReducers({
+  favorites: FavoritesRed, // Combina i reducer sotto la chiave 'favorites'
+  jobs: JobsList,
+});
 
 const store = configureStore({
-  reducer: mainReducer, // qui ci va il reducer
-})
+  reducer: bigReducer, // Usa bigReducer come reducer principale
+});
 
-export default store
+export default store;
