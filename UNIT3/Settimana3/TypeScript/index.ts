@@ -26,7 +26,7 @@ Proprio come avviene in JS
 serve per indicare che quella variabile può essere un determinato tipo
 esempio: let valore: string | number;
 valore può essere sia di tipo string che di tipo number
-si usa tramite l'operatore |. Viene spesso usato anche per dichiarare gli array
+si usa tramite l'operatore | (si chiama singolo pipe). Viene spesso usato anche per dichiarare gli array
 */
 //----------------------------------------------
 //Le Interfaces in TS
