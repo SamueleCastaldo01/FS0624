@@ -1,0 +1,43 @@
+front end: i frameworf principali sono react angular view. Tutto quello che si vede sullo schermo
+html css e js. Per applicare della logica tra le pagine 
+
+------------------------------------------------------------
+back end: un mondo, non avremo a che fare con le pagine web, avremo dekke soddisfazioni di altro tipo
+   si guarda di più la logica, gli algoritmi.
+tutto quello che avviene dietro alle quinte. 
+creare la logica per creare le funzionalità per l'applicazione. Componente principale sono i database.
+gestire anche la sicurezza dell'applicazione, autenticazione degli utenti, i permessi degli utenti.
+ci sarà del codice a livello server che grazie all'API si aspetta delle richieste da parte del front end
+entrare in contatto dei database per fare le varie operazioni, mandare anche una risposta al front end
+
+gestire i dati, sicurezza, buisness logic (calcolare i prezzi, gestione), ulteriori servizi. Per svolgere determinate funzioni
+tipo i pagamenti, oppure vogliamo mandare un email sulla registrazione, possiamo sfruttare un servizio di terzi parti.
+Cercare sempre cmq il più alto numero di richieste in contemporanea.
+
+js è un linguaggio che si adottano nel back end, anche node js(js a livello server), anche express
+noi andiamo ad utilizzare java con il framework spring. 
+Poi abbiamo i database. Relazionali e non relazionali. La scelta dipende dalle specifiche, noi usiamo  quelli relazionali
+quelli tradizionali, hanno una strategia su tabelle. Tabelle collegate tra loro.
+MySQL e postgre SQL
+
+quelli non relazionali, quelli più semplici tipo mongoDB e redis. Noi andiamo ad utilizzare PostgreSQL
+
+Come fa il front end a comunicare con il back end.
+i device mandano la richiesta la mandano a spring, protocollo http si inviano questi tipi di richieste.
+post get patch delete. Il nostro backend mette a disposizione delle funzionalità che potrà usare il front end.
+Noi non andiamo a dare delle richieste ma delle risposte, rispetto la front end.
+
+dobbiamo lavorare principalmente con il terminale rispetto alla pagina web.
+
+-----------------------------------------------------------------
+Esempio:
+tipo lato front end, si preoccuperà quando andrà a premere il pulsante di mandare i dati a back end
+i back end attende i dati per elaborarli.
+
+-----------------------------------------------------
+Esempio pratico. Come fa un front end a comunicare con un back end
+un semplice login e registrazione.
+
+bene mi ha fatto scaricare intellij community e jdk temurin versione gratuita
+
+

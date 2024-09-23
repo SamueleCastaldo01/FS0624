@@ -1,0 +1,9 @@
+
+prendere correttamente l'id 
+
+
+gestire il caso della get per l'anno di produzione
+
+devo mettere anche il tasto delete, da dentro l'edit
+cosi sto apposto per i pezzi di ricambio
+dopo di questo devo far stampare solo stato e poi posso procedere per l'output
