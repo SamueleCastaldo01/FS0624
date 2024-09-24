@@ -33,12 +33,19 @@ public class Main {
             String conc = "";
             System.out.print("Inserisci una stringa: ");
              s = scanner.nextLine();
-            for(int i =0; i < s.length() ; i++) {
+            for(int i =0; i < s.length(); i++) {
                 conc += s.charAt(i) + ",";
             }
             System.out.println(conc);
         }
 
+        //Esercizio 4
+        System.out.print("Inserisci un numero per il conto alla rovescia: ");
+        int numRovescia = scanner.nextInt();
+
+        for(int i = numRovescia; i >= 0; i--) {
+            System.out.println(i);
+        }
     }
 
     public static boolean stringaParioDispari(String s) {
