@@ -17,7 +17,7 @@ public class Main {
         nomi[1] = "Luigi";
         nomi[2] = "Peach";
         nomi[3] = "Peaky";
-        nomi[4] = "Blinders";
+        nomi[4] = "Ciao";
 
 
         // Inseriamo un nuovo nome alla terza posizione
