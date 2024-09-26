@@ -1,4 +1,4 @@
-public abstract class DIpendente {
+public abstract class DIpendente implements Checkable {
     protected String matricola;
     protected double stipendio;
     protected String dipartimento;
@@ -48,5 +48,9 @@ public abstract class DIpendente {
 
     //Deve essere implementato per forza dalle altri classi
     public abstract double calculateSalary();
+
+    public void checkIn() {
+        System.out.println("Il dipendente con matricola " + matricola + " ha iniziato il turno.");
+    }
 
 }

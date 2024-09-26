@@ -19,12 +19,20 @@ public class Main {
         DIpendente dipFUll = new DipendenteFullTime("001", 200, "PRODUZIONE");
         DIpendente dipParT = new DipendentePartTime("002", 0, "VENDITE", 120, 15);
         DIpendente diri = new Dirigente("003", 300, "AMMINISTRAZIONE", 20);
+        Volontario vol1 = new Volontario("Mario Rossi", 25, "Volontario con esperienza in assistenza sociale");
+        Volontario vol2 = new Volontario("Anna Verdi", 30, "Volontario specializzato in emergenze mediche");
 
         DIpendente[] dip = {dipFUll, dipParT, diri};
 
         for (DIpendente dippo : dip) {
             System.out.println("Matricola: " + dippo.getMatricola());
             System.out.println("Salario: " + dippo.calculateSalary() + "\n");
+        }
+
+        //Esercizio 3
+        Checkable[] persone = {dipFUll, diri, vol1, dipParT, vol2};
+        for (Checkable persona : persone) {
+            persona.checkIn();
         }
 
     }
