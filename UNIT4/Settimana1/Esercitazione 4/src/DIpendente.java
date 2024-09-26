@@ -1,7 +1,7 @@
-public class DIpendente {
-    private String matricola;
-    private double stipendio;
-    private String dipartimento;
+public abstract class DIpendente {
+    protected String matricola;
+    protected double stipendio;
+    protected String dipartimento;
 
     private static final String[] DIPARTIMENTI_VALIDI = {"PRODUZIONE", "AMMINISTRAZIONE", "VENDITE"};
 
@@ -46,5 +46,7 @@ public class DIpendente {
         }
     }
 
+    //Deve essere implementato per forza dalle altri classi
+    public abstract double calculateSalary();
 
 }
