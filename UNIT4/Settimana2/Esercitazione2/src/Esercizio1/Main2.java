@@ -27,8 +27,8 @@ public class Main2 {
         }
 
         // Stampa tutte le parole duplicate; errore mi compare due volte
-        for (String parola : lista) {  //vuol dire in questo caso che è gia presente
-            if(paroleDistinte.add(parola)) {
+        for (String parola : lista) {
+            if(paroleDistinte.add(parola)) { //vuol dire in questo caso se non è presente
                 paroleDistinte.add(parola);  //qui ci sono le parole uniche
             }else {
                 paroleDuplicate.add((parola)); //qui invece abbiamo le parole duplicate, una sola volta
@@ -49,7 +49,7 @@ public class Main2 {
         System.out.println("---------------------");
 
 
-
+    //non è ottimale perché le parole non sono completamente distinte
 
 
         scanner.close();  // Chiudi lo scanner
