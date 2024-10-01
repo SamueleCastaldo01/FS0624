@@ -7,10 +7,17 @@ import java.util.Scanner;
 public class Main3 {
     public static void main(String[] args) {
         ArrayList<Integer> random = new ArrayList<>();
+        ArrayList<Integer> reverse = new ArrayList<>();
         random = randomList(10);
 
         System.out.println("lista ordinata numeri casuali: ");
         for (int i : random) {
+            System.out.println(i);
+        }
+
+        reverse = reverseList(random);
+        System.out.println("lista ordinata numeri casuali: ");
+        for (int i : reverse) {
             System.out.println(i);
         }
 
@@ -27,6 +34,14 @@ public class Main3 {
 
         //ordiniamo la lista
         Collections.sort(lista);
+
+        return lista;
+    }
+
+    public static ArrayList<Integer> reverseList(ArrayList<Integer> lista) {
+
+        //ordiniamo la lista in maniera inversa
+        lista.sort(Collections.reverseOrder());
 
         return lista;
     }
