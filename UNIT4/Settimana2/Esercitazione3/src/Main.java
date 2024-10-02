@@ -72,11 +72,17 @@ public class Main {
 
         //esercizio 4
         //ottenere una lista di prodotti ordinati da clienti di livello tier 2, tra l'01-Feb-2021 e 01-Apr-2021
-        LocalDateTime startDate = LocalDateTime.of(2021, 2, 1, 0, 0);
-        LocalDateTime endDate = LocalDateTime.of(2021, 4, 1, 0, 0);
+        LocalDateTime startDate = LocalDateTime.of(2021, 2, 1, 0, 0); //primo febbraio
+        LocalDateTime endDate = LocalDateTime.of(2021, 4, 1, 0, 0);  //primo aprile
         List<Product> customTier = orders.stream()
-                .filter(order -> )
+                .filter(order -> order.getCustomer().getTier() == 2)
+                .filter(order -> order.getOrderDate().isAfter(startDate) && order.getOrderDate().isBefore(endDate))  //filtraggio per date
+                .flatMap(order -> order.getProducts().stream())
+                .toList();
 
+        System.out.println();
+        System.out.println("Esercizio 4, tier 2, per data inizio e data fine");
+        customTier.forEach(System.out::println);
 
 
     }
