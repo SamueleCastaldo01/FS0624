@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27077410-b57f-46d1-961f-41d0ec7a97ca" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/../Esercitazione3/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/samueleCastaldo/Esercizio4/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/samueleCastaldo/Esercizio4/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/samueleCastaldo/Esercizio4/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/samueleCastaldo/Esercizio4/Product.java" afterDir="false" />
+    <list default="true" id="27077410-b57f-46d1-961f-41d0ec7a97ca" name="Changes" comment="primo commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/samueleCastaldo/Esercizio4/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/samueleCastaldo/Esercizio4/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +45,8 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/TwinPower/Desktop/FS0624/UNIT4/Settimana2/Esercitazione4/src/main/java/samueleCastaldo/Esercizio4"
+    "last_opened_file_path": "C:/Users/TwinPower/Desktop/FS0624/UNIT4/Settimana2/Esercitazione4/src/main/java/samueleCastaldo/Esercizio4",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -84,11 +82,20 @@
       <option name="project" value="LOCAL" />
       <updated>1727985538747</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="primo commit">
+      <option name="closed" value="true" />
+      <created>1727988870921</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1727988870921</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+    <MESSAGE value="primo commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="primo commit" />
   </component>
 </project>

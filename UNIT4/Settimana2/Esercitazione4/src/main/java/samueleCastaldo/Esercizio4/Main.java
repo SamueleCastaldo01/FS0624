@@ -2,6 +2,7 @@ package samueleCastaldo.Esercizio4;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -53,7 +54,47 @@ public class Main {
         //Esercizio 2
         //dato un elenco di ordini, calcola il totale delle vendite per ogni cliente.
         //crea una mappa in cui la chiave è il cliente e il valore è l'importo totale dei suoi acquisti
+        Map<Customer, Double> esercizio2 = orders.stream()
+                .collect(Collectors.groupingBy(
+                        order -> order.getCustomer(),  // Raggruppa per cliente
+                        Collectors.summingDouble(order -> order.getProducts().stream()
+                                .mapToDouble(product ->product.getPrice())  //qui vado ad usare il mapTo ,Somma il prezzo di tutti i prodotti dell'ordine
+                                .sum()  // Somma per ogni ordine
+                        )
+                ));
 
+        System.out.println();
+        esercizio2.forEach((customer, totalValue) -> {
+            System.out.println("Cliente: " + customer.getName() + ", Totale ordini: " + totalValue);
+        });
+
+
+        //Esercizio 3
+        //dato un elenco di prodotti, trova i prodotti più costosi.
+       List<Product> esercizio3 = productList.stream().sorted(Comparator.comparingDouble(Product::getPrice).reversed()).limit(5).toList();
+       System.out.println();
+       esercizio3.forEach(System.out::println);
+
+       //Esercizio 4
+       //dato un elenco di ordini, calcola la media degli importi degli ordini.
+        double esercizio4 = orders.stream().mapToDouble(order -> order.getProducts().stream()
+                .mapToDouble(product -> product.getPrice()).sum() // va a fare la somma di tutti i prodotti di quel ordine
+        ).average().orElse(0.0);   //e qui alla fine farà la media della somma di tutti gli ordini
+
+        System.out.println();
+        System.out.println("la media degli ordini: " + esercizio4);
+
+        //esercizio 5
+        //dato un elenco di prodotti, raggruppa i prodotti per categoria e calcola la somma degli importi per ogni categoria
+        Map<String, Double> esercizio5 = productList.stream().collect(Collectors.groupingBy(
+                product -> product.getCategory(),
+                Collectors.summingDouble(product -> product.getPrice())
+        ));
+
+        System.out.println();
+        esercizio5.forEach((category, somma) -> System.out.println(category + " somma: " + somma));
+
+        //esercizio 6
 
     }
 }
