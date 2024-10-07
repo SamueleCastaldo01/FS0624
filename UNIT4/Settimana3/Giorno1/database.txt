@@ -1,2 +1,14 @@
 SELECT * FROM clienti WHERE nome = 'Mario';
 
+SELECT nome, cognome FROM clienti WHERE EXTRACT(YEAR FROM anno_di_nascita) = 1985;
+
+SELECT COUNT(*) FROM fatture WHERE iva = 22;
+
+SELECT * FROM prodotti WHERE EXTRACT(YEAR FROM data_attivazione) = 2017 AND (in_produzione = 'true' OR in_commercio = 'true');
+
+SELECT f.*, fo.denominazione 
+FROM fatture f
+JOIN fornitori fo ON f.numero_fornitore = fo.numero_fornitore
+WHERE f.importo < 1000;
+
+SELECT COUNT(*), EXTRACT(YEAR FROM data_fattura) FROM fatture WHERE iva = 20 GROUP BY EXTRACT(YEAR FROM data_fattura);
