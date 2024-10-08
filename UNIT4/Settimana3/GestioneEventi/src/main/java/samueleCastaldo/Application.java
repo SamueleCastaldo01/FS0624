@@ -23,6 +23,7 @@ public class Application {
         try{
             Evento fromDb = ed.getById(1);
             System.out.println(fromDb);
+            ed.deleteById(1);
         }catch (IllegalArgumentException error) {
             System.out.println(error.getMessage());
         }

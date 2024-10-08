@@ -28,4 +28,17 @@ public class EventoDAO {
         if(found == null) throw new IllegalArgumentException("Non è stato trovato questo id: " +EventoId);
         return found;
     }
+
+    public void deleteById(long EventoId) {
+        Evento found = this.getById(EventoId);
+        //1chiediamo la transazione
+        EntityTransaction transaction = entityManager.getTransaction();
+        //Facciamo partire
+        transaction.begin();
+        //rimuoviamo lo studente dal persistence. Ancora non viene rimosso nel db
+        entityManager.remove(found);
+        //chiudiamo, quindi lo va a salvare nello stato
+        transaction.commit();
+        System.out.println("L'evento " +found.getDescrizione() + " è stato rimosso dal DB");
+    }
 }
