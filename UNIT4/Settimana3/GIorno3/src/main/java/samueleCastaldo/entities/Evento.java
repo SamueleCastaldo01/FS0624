@@ -22,16 +22,21 @@ public class Evento {
     @Column(name = "numero_massimo_partecipanti", nullable = false)
     private int numero_massimo_partecipanti;
 
+    @ManyToOne
+    @JoinColumn(name = "location_id", nullable = false)
+    private Location location;
+
     public Evento () {  //obbligatorio, per gli entities il costruttore vuoto
 
     }
 
-    public Evento(String titolo, LocalDate data_evento, String descrizione, EventoType tipo_evento, int numero_massimo_partecipanti) {
+    public Evento(String titolo, LocalDate data_evento, String descrizione, EventoType tipo_evento, int numero_massimo_partecipanti, Location location) {
         this.titolo = titolo;
         this.data_evento = data_evento;
         this.descrizione = descrizione;
         this.tipo_evento = tipo_evento;
         this.numero_massimo_partecipanti = numero_massimo_partecipanti;
+        this.location = location;
     }
 
     public String getTitolo() {
@@ -58,6 +63,10 @@ public class Evento {
         return numero_massimo_partecipanti;
     }
 
+    public Location getLocation() {
+        return location;
+    }
+
     public void setId(long id) {
         this.id = id;
     }
@@ -82,6 +91,10 @@ public class Evento {
         this.numero_massimo_partecipanti = numero_massimo_partecipanti;
     }
 
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
     @Override
     public String toString() {
         return "Evento{" +
@@ -91,6 +104,7 @@ public class Evento {
                 ", descrizione='" + descrizione + '\'' +
                 ", tipo_evento=" + tipo_evento +
                 ", numero_massimo_partecipanti=" + numero_massimo_partecipanti +
+                ", location=" + location.getNome() +
                 '}';
     }
 }
