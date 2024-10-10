@@ -6,19 +6,20 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "evento")
-public class Evento {
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class Evento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //permette di mettere in automatico l'id
-    private long id;
+    protected long id;
     @Column(name = "data_evento", nullable = false)
-    private LocalDate data_evento;
+    protected LocalDate data_evento;
     @Column(name = "descrizione", nullable = false)
-    private String descrizione;
+    protected String descrizione;
     @Column(name = "tipo_evento", nullable = false)
     @Enumerated(EnumType.STRING)
-    private EventoType tipo_evento;
+    protected EventoType tipo_evento;
     @Column(name = "numero_massimo_partecipanti", nullable = false)
-    private int numero_massimo_partecipanti;
+    protected int numero_massimo_partecipanti;
 
     public Evento () {  //obbligatorio, per gli entities il costruttore vuoto
 
