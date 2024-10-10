@@ -1,14 +1,19 @@
 package samueleCastaldo.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "partite_di_calcio")  // Specifica la tabella
+@NamedQueries({
+        @NamedQuery(name = "getVinteInCasa",
+        query = "SELECT pc FROM PartitaDiCalcio pc WHERE pc.vincente = pc.squadra_di_casa"
+        ),
+        @NamedQuery(name = "getVinteInTrasferta",
+        query = "SELECT pc FROM PartitaDiCalcio pc WHERE pc.vincente = pc.squadra_ospite"
+        )
+})
 public class PartitaDiCalcio extends Evento {
 
 

@@ -6,6 +6,7 @@ import jakarta.persistence.TypedQuery;
 import samueleCastaldo.entities.Concerto;
 import samueleCastaldo.entities.Evento;
 import samueleCastaldo.entities.Genere;
+import samueleCastaldo.entities.PartitaDiCalcio;
 
 import java.util.List;
 
@@ -57,6 +58,16 @@ public class EventoDAO {
         TypedQuery<Concerto> query = entityManager.createQuery("SELECT c FROM Concerto c WHERE c.genere = :genere", Concerto.class);
         query.setParameter("genere", genere);
         return  query.getResultList();
+    }
+
+    public List<PartitaDiCalcio> getVinteInCasa() {
+        TypedQuery<PartitaDiCalcio> query = entityManager.createNamedQuery("getVinteInCasa", PartitaDiCalcio.class);
+        return query.getResultList();
+    }
+
+    public List<PartitaDiCalcio> getVinteInTrasferta() {
+        TypedQuery<PartitaDiCalcio> query = entityManager.createNamedQuery("getVinteInTrasferta", PartitaDiCalcio.class);
+        return query.getResultList();
     }
 
 }

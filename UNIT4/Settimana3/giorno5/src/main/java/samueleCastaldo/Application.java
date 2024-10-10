@@ -7,6 +7,7 @@ import samueleCastaldo.dao.EventoDAO;
 import samueleCastaldo.entities.Concerto;
 import samueleCastaldo.entities.EventoType;
 import samueleCastaldo.entities.Genere;
+import samueleCastaldo.entities.PartitaDiCalcio;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -32,11 +33,48 @@ public class Application {
         eventoda.save(concerto3);
         eventoda.save(concerto4); */
 
+        /* Inserimento partite di calcio nel database
+        PartitaDiCalcio partita1 = new PartitaDiCalcio(
+                LocalDate.of(2024, 10, 10),
+                "Match 1",
+                EventoType.PRIVATO,
+                5000,
+                "Squadra A",
+                "Squadra B",
+                "Squadra A", // Vincente
+                2,
+                1
+        );
+
+        PartitaDiCalcio partita2 = new PartitaDiCalcio(
+                LocalDate.of(2024, 10, 15),
+                "Match 2",
+                EventoType.PRIVATO,
+                5000,
+                "Squadra C",
+                "Squadra D",
+                "Squadra D", // Vincente
+                1,
+                2
+        );
+        eventoda.save(partita1);
+        eventoda.save(partita2); */
+
+        //test esercizio 2 ok funziona, perfetto
+         List<PartitaDiCalcio> partiteVinteInCasa = eventoda.getVinteInCasa();
+         for (PartitaDiCalcio partite : partiteVinteInCasa){
+             System.out.println(partite);
+         }
+
         //test metodo ricerca streaming
         boolean streaming = true;
         List<Concerto> concertiInStreaming = eventoda.getConcertiInStreaming(streaming);
         for (Concerto concerto : concertiInStreaming) {
             System.out.println(concerto);
         }
+
+
+
+
     }
 }
