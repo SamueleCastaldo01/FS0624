@@ -26,7 +26,7 @@ public class Persona {
     @OneToMany(mappedBy = "persona", cascade = CascadeType.ALL)
     private List<Partecipazione> partecipazioni;
 
-    public Persona(String gino, String rossi) {
+    public Persona() {
     }
 
     public Persona(String nome, String cognome, String email, LocalDate data_di_nascita, Sesso sesso) {

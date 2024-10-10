@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Evento {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) //permette di mettere in automatico l'id
+    @GeneratedValue //permette di mettere in automatico l'id
     protected long id;
     @Column(name = "data_evento", nullable = false)
     protected LocalDate data_evento;

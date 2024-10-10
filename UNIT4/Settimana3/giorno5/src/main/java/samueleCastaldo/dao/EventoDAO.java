@@ -2,7 +2,12 @@ package samueleCastaldo.dao;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.TypedQuery;
+import samueleCastaldo.entities.Concerto;
 import samueleCastaldo.entities.Evento;
+import samueleCastaldo.entities.Genere;
+
+import java.util.List;
 
 public class EventoDAO {
     private final EntityManager entityManager;
@@ -41,4 +46,17 @@ public class EventoDAO {
         transaction.commit();
         System.out.println("L'evento " +found.getDescrizione() + " è stato rimosso dal DB");
     }
+
+    public List<Concerto> getConcertiInStreaming(boolean b) {
+        TypedQuery<Concerto> query = entityManager.createQuery("SELECT c FROM Concerto c WHERE c.in_streaming = :b", Concerto.class);
+        query.setParameter("b", b);
+        return query.getResultList();
+    }
+
+    public List<Concerto> getConcertiPerGenere(Genere genere) {
+        TypedQuery<Concerto> query = entityManager.createQuery("SELECT c FROM Concerto c WHERE c.genere = :genere", Concerto.class);
+        query.setParameter("genere", genere);
+        return  query.getResultList();
+    }
+
 }
