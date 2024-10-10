@@ -1,0 +1,94 @@
+Strategia single table
+quando andiamo ad estendere su un entità possiamo usare la strategia single table
+quindi le classi che estenderanno tipo automobile, e aggiungiamo altri metodi
+nel momento cui vado a creare un oggetto della classe figlia nella tabelal automobiel aggiunge altre colonne
+mentre se andiamo a crearci un oggetto di un altro figlio che ha quei attributi, quelli saranno null.
+Quindi sarebbe un mappazzone (un mix) di tutti  i figli come colonne
+
+Parte pratica come funziona?
+La la super classe, sopra ci dobbiamo dare la strategia, nel nostro caso single table
+Le classi figlio dovranno estendere la super classe
+
+Esempio Animali, cani, gatti
+Animali classe astratta, tipo entity, Table, gli diamo un id, nome ed età
+costruttore nome ed età, il get il set e il toString
+
+Classe figlia cat, estendono animal, ci aggiungiamo private maxJumpleHeight. Dobbiamo metterla entity per usarla nella tabella
+Classe figlio cane, maxSpeed, ci aggiungiamo entity (estende animals)
+facciamo i costruttori, i get i set e i toString
+
+Essendo in un unica table ho tutto li, anche se dovessi prendermi tutti i dati degli animali ho tutto li
+quindi è molto più veloce. Ha la comodità di fornirci una sola tabella dove troverò tutti gli animali.
+Più gestibile e performante rispetto ad avere multiple tabelle.
+Di contro ci troveremo, ad avere delle tabelle disordinate e piene di valori null nelle colonne. Non potrò mettere dei vincoli no null sulle colonne ma dovrò gestire il tutto tramite codice (non è un grosso problema).
+
+per il dao ne posso fare uno per tutti. Perché posso sfruttare il polimorfismo
+
+si verrà a creare una colonna di discriminazione, possiamo impostare il nome, nelle varie entity
+tipo entity cane gli diamo cane, gatto per il gatto, animal per animal. E opzionale ma serve per customizzare il valore del descriminatore.
+
+------------------------------------------------------------------------------------
+Joined seconda strategia.   Una tabella per ogni entità. La super classe avrà gli attributi in comune, i figli att specifici
+la colonna descriminatoria sarà utile per distinguere, e si troverà nella super classe
+joined: ci basta cambiare solo la strategia e ci cambia tutto, il resto rimane uguale cambia solamente
+Ci porta ad avere tabelle sia per il padre che per i figli. Una tabella per ogni entità.
+Nella tabella padre abbiamo gli attributi in comune, mentre sulle classe figlie abbiamo gli attributi specifici.
+
+Questa strategia conviene usarla quando abbiamo tanti attributi specifici diversi e pochi in comune.
+Abbiamo ancora bisogno di discriminator column
+
+Non cambia nulla nemmeno nell'inserimento dei dati. Fa tutto lui (buona sta cosa).
+All'livello di codice non cambia nulla, ma cambia il risultato nel database.
+Anche la find non la dobbiamo cambiare, si preoccupa lui di fare la join, nel momento in cui andiamo a ricercare.
+
+------------------------------------------------------------------------------------
+Table per class    table per concrete class   Terza strategia
+Se la classe padre è astratta non viene creta. Quindi nel nostra caso vengono create solamente le classe figlio.
+Se classe padre è concreta viene creata anche una tabella. Se è astratta verranno create due tabelle distinte tra di loro.
+CI possono essere dei svantaggi, nel momento in cui voglio fare una query di tutti gli animali, he non è facile.
+Diventa complessa la cosa. E costoso anche fare questo procedimento. Non è il massimo. Però a livello di pulizia non è male.
+
+------------------------------------------------------------------------------------
+MappedSuperClass  crea le classi solo per le figlie anche se la superclasse è una classe concreta.
+Questa mapped non è una entity. Non tanto vine usata. Strana come cosa. Meglio non usarla. Nella maggior parte dei casi
+la classe padre è astratta.
+
+Simile alla table per class, ma non è la stessa cosa. Meglio non utilizzarla questa quarta strategia.
+
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Mondo delle query Language  (sono molto utili)
+serve molto per filtrare i dati, e in tutte le applicazioni, serve il filtraggio, vb ma sta cosa già la sapevo
+JPQ, oppure posso utilizzare anche direttamente SQL
+JPQ rende il tutto più facile, per la gestione delle query. Non è niente male.
+Lavorare roba tipo come polimorfismo, nelle tabelle perché in realtà non esiste nel mondo dei database.
+Utilizzerò le classi invece che tabelle nel JPQ, perché si adatta a java.
+Riusiamo a fare tutto in sostanza. Si dividono in due tipi di query. 
+
+-Named query: quelle tipicamente utilizzate, vengono memorizzate e riutilizzate. (come se fosse una funzione), la scrivo sulla enti
+java mi controlla se la sintassi è giusta quando vado avvio l'applicazione
+-Dynamic query: la lancio e poi pure basta.
+
+Le query possono essere sia tipizzare oppure normali. Meglio usare la tipizzazione, è estremamente comodo.
+Se utilizzo sql ho problemi con le varie strategie, perché dovrò fare le varie join
+
+Mentre per il JPQ non mi crea nessun problema il tipo di strategia che ho adottato.
+Esempio nella Dao animal mi vado a creare una select di tutti gli animali. Tramite createQuery
+
+JQL usa la classe, qunado andiamo a fare il from Animal a. La seguente query
+
+
+posso creare delle namedQuery sopra alla classe, do il nome alla query e faccio la query
+Se sbaglio a scrivere la query non mi fa partire l'application.
+Ci posso mettere anche dei parametri per quanto riguarda il where, per diventarle dinamiche, come se accettassero il parametro di input. 
+Come la si usa una volta creata?
+La query la scriviamo nella classe madre, Poi la chiamiamo all'interno del DAO.
+
+
+///////////////////////////
+possiamo fare l'update attraverso le query
+Aggiorniamo il nome vecchio con quello nuovo. :sonoParametri
+UPDATE Animal a SET a.name = :newName WHERE a.name = :oldName
+
+
+
