@@ -62,8 +62,8 @@ public class MenuConfig {
     }
 
     @Bean
-    public Menu getMenu() {
-        Menu menu = new Menu(getPizze(), getToppings(), getDrinks());
+    public Menu getMenu(List<Pizza> pizze, List<Topping> toppings, List<Drink> drinks) {
+        Menu menu = new Menu(pizze, toppings, drinks);
 
         return menu;
     }
