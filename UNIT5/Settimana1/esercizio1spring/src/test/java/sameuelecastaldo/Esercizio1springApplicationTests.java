@@ -1,4 +1,4 @@
-package sameuelecastaldo.esercizio1spring;
+package sameuelecastaldo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
