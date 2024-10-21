@@ -1,5 +1,6 @@
 package sameuelecastaldo.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Pizza {
@@ -8,11 +9,11 @@ public class Pizza {
     private int calories;
     private List<Topping> topping;
 
-    public Pizza(String name, double price, int calories, List<Topping> topping) {
+    public Pizza(String name, double price, int calories) {
         this.name = name;
         this.price = price;
         this.calories = calories;
-        this.topping = topping;
+        this.topping = new ArrayList<>();
     }
 
     public String getName() {
@@ -45,6 +46,10 @@ public class Pizza {
 
     public void setTopping(List<Topping> topping) {
         this.topping = topping;
+    }
+
+    public void addTopping(Topping topping) {
+        this.topping.add(topping);
     }
 
     @Override
