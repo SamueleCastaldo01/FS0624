@@ -1,14 +1,13 @@
 package samuelecastaldo.entities;
 
-public class Topping {
+public class Topping extends  MenuItem {
     private String name;
     private int calories;
-    private double price;
 
     public Topping(String name, int calories, double price) {
+        super(name, price);
         this.name = name;
         this.calories = calories;
-        this.price = price;
     }
 
     public String getName() {
@@ -27,20 +26,12 @@ public class Topping {
         this.calories = calories;
     }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
 
     @Override
     public String toString() {
         return "Topping{" +
                 "name='" + name + '\'' +
                 ", calories=" + calories +
-                ", price=" + price +
                 '}';
     }
 }
