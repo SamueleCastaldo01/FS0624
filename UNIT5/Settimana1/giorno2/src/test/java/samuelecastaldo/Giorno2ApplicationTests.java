@@ -1,4 +1,4 @@
-package samuelecastaldo.giorno2;
+package samuelecastaldo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
