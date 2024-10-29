@@ -28,6 +28,21 @@ public class BlogService {
         return found;
     }
 
+    public Blog findByIdAndUpdate(int id, NewBlogPayload body) {
+        Blog found = null;
+        for(Blog blog : this.blogList) {
+            if(blog.getId() == id) {
+                found = blog;
+                found.setCategoria(body.getCategoria());
+                found.setContenuto(body.getContenuto());
+                found.setTitolo(body.getTitolo());
+                found.setTempoDiLettura(body.getTempoDiLettura());
+            }
+        }
+        if (found == null) throw new NotFoundException(id);
+        return found;
+    }
+
     public Blog saveBlog(NewBlogPayload body) {
         Random rndm = new Random();
         Blog newblog = new Blog(body.getCategoria(), body.getTitolo(), body.getTempoDiLettura(), body.getContenuto());

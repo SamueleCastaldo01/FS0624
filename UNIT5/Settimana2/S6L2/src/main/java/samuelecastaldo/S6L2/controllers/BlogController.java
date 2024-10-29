@@ -31,5 +31,10 @@ public class BlogController {
         return this.blogService.saveBlog(body);
     }
 
+    @PutMapping("/{id}")
+    public Blog findBlogByIdAndUpdate(@PathVariable int id, @RequestBody NewBlogPayload body) {
+        return this.blogService.findByIdAndUpdate(id, body);
+    }
+
 
 }
