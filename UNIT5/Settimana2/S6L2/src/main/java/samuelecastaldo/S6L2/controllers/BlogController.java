@@ -1,20 +1,21 @@
 package samuelecastaldo.S6L2.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import samuelecastaldo.S6L2.service.BlogService;
 
 @RestController
-@RequestMapping("/example")
-public class ExampleController {
+@RequestMapping("/blogposts")
+public class BlogController {
+    @Autowired
+    private BlogService blogService;
 
     @GetMapping
-    // Per contattare questo endpoint dovrò mandare una GET a http://localhost:3001/examples
     public String getExample() {
-        return "Ciao, io sono l'endpoint che risponde alle richieste GET";
+        return "Ciao, a tutti";
     }
-
-
 
 
 }
