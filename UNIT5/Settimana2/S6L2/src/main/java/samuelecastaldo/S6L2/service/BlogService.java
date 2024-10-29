@@ -51,5 +51,14 @@ public class BlogService {
         return newblog;
     }
 
-
+    public void findByIdAndDelete(int id) {
+        Blog found = null;
+        for (Blog blog : this.blogList) {
+            if (blog.getId() == id) {
+                found = blog;
+            }
+        }
+        if (found == null) throw new NotFoundException(id);
+        this.blogList.remove(found);
+    }
 }
