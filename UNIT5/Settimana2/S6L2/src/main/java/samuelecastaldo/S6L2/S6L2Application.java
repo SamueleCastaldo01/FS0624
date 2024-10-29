@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class S6L2Application {
 
 	public static void main(String[] args) {
+
 		SpringApplication.run(S6L2Application.class, args);
 	}
 
