@@ -1,6 +1,7 @@
 package samuelecastaldo.s6l3.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import samuelecastaldo.s6l3.entities.Blog;
@@ -16,9 +17,17 @@ public class BlogControllers {
     @Autowired
     BlogService blogservice;
 
+    /*
     @GetMapping
     public List<Blog> findAll() {
         return this.blogservice.findAll();
+    } */
+
+    @GetMapping
+    public Page<Blog> findAll(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size,
+                              @RequestParam(defaultValue = "id") String sortBy) {
+        // Mettiamo dei valori di default per far si che non ci siano errori se il client non ci invia uno dei query parameters
+        return this.blogservice.findAll(page, size, sortBy);
     }
 
     @GetMapping("/{id}")
