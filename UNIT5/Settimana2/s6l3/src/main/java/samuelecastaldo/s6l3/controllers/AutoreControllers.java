@@ -37,4 +37,10 @@ public class AutoreControllers {
         return this.autoreService.findByIdAndUpdate(id, body);
     }
 
+    @DeleteMapping("{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void findByIDAndDelete(@PathVariable long id) {
+        this.autoreService.findByIdAndDelete(id);
+    }
+
 }

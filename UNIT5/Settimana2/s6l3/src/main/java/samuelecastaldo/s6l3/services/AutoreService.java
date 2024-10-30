@@ -40,4 +40,9 @@ public class AutoreService {
         return this.autoreRepository.save(found);
     }
 
+    public void findByIdAndDelete(long id) {
+        Autore found = this.findById(id);
+        this.autoreRepository.delete(found);
+    }
+
 }
