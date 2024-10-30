@@ -1,12 +1,14 @@
 package samuelecastaldo.s6l3.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import samuelecastaldo.s6l3.entities.Autore;
 import samuelecastaldo.s6l3.payloads.NewAutorePayload;
 import samuelecastaldo.s6l3.services.AutoreService;
+
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/autore")
@@ -15,9 +17,13 @@ public class AutoreControllers {
     AutoreService autoreService;
 
     @GetMapping
-    // Per contattare questo endpoint dovrò mandare una GET a http://localhost:3001/examples
-    public String getExample() {
-        return "Ciao, io sono l'endpoint che risponde alle richieste GET";
+    public List<Autore> findAll() {
+        return this.autoreService.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Optional<Autore> findById(@PathVariable long id) {
+        return this.autoreService.findById(id);
     }
 
     @PostMapping

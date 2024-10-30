@@ -6,6 +6,9 @@ import samuelecastaldo.s6l3.entities.Autore;
 import samuelecastaldo.s6l3.payloads.NewAutorePayload;
 import samuelecastaldo.s6l3.repositories.AutoreRepository;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class AutoreService {
     @Autowired
@@ -17,5 +20,12 @@ public class AutoreService {
     }
 
 
+    public List<Autore> findAll() {
+        return this.autoreRepository.findAll();
+    }
+
+    public Optional<Autore> findById(long id) {
+        return this.autoreRepository.findById(id);
+    }
 
 }
