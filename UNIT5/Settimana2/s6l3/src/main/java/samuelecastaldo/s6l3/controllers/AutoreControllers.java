@@ -22,7 +22,7 @@ public class AutoreControllers {
     }
 
     @GetMapping("/{id}")
-    public Optional<Autore> findById(@PathVariable long id) {
+    public Autore findById(@PathVariable long id) {
         return this.autoreService.findById(id);
     }
 
@@ -32,6 +32,9 @@ public class AutoreControllers {
         return this.autoreService.save(body);
     }
 
-
+    @PutMapping("{id}")
+    public Autore findByIdAndUpdate(@PathVariable long id, @RequestBody NewAutorePayload body){
+        return this.autoreService.findByIdAndUpdate(id, body);
+    }
 
 }
