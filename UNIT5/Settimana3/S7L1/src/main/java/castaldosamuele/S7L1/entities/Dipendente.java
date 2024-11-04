@@ -12,17 +12,19 @@ public class Dipendente {
     private String nome;
     private String cognome;
     private String email;
+    private String password;
     @Column(name = "avatar_url")
     private String avatarUrl;
 
     public Dipendente() {}
 
-    public Dipendente(String username, String nome, String cognome, String email, String avatarUrl) {
+    public Dipendente(String username, String nome, String cognome, String email, String avatarUrl, String password) {
         this.username = username;
         this.nome = nome;
         this.cognome = cognome;
         this.email = email;
         this.avatarUrl = avatarUrl;
+        this.password = password;
     }
 
     public long getId() {
@@ -67,6 +69,14 @@ public class Dipendente {
 
     public void setAvatarUrl(String avatarUrl) {
         this.avatarUrl = avatarUrl;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override

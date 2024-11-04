@@ -46,7 +46,7 @@ public class DipendenteService {
                     throw new BadRequestException("Username " + body.username() + " è già in uso!");
                 }
         );
-        Dipendente newDipendente = new Dipendente(body.username(), body.nome(), body.cognome(), body.email(), body.avatarUrl());
+        Dipendente newDipendente = new Dipendente(body.username(), body.nome(), body.cognome(), body.email(), body.avatarUrl(), body.password());
         return this.dipendenteRepository.save(newDipendente);
     }
 
