@@ -1,6 +1,11 @@
 package castaldosamuele.S7L1.entities;
 
 import jakarta.persistence.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+
+import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Table(name = "dipendenti")
@@ -15,6 +20,8 @@ public class Dipendente {
     private String password;
     @Column(name = "avatar_url")
     private String avatarUrl;
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     public Dipendente() {}
 
@@ -25,6 +32,7 @@ public class Dipendente {
         this.email = email;
         this.avatarUrl = avatarUrl;
         this.password = password;
+        this.role = Role.USER;
     }
 
     public long getId() {
@@ -75,9 +83,19 @@ public class Dipendente {
         return password;
     }
 
+    public Role getRole() {
+        return role;
+    }
+
     public void setPassword(String password) {
         this.password = password;
     }
+
+    //ritorna una lista di ruoli dell'utente.
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority(this.role.name()));
+    }
+
 
     @Override
     public String toString() {
