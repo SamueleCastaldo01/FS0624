@@ -29,7 +29,7 @@ public class DipendenteController {
         return this.dipendenteService.findAll();
     }
 
-    // /Me endpoints
+    // /Me endpoints----------------------------------------------------------------
     @GetMapping("/me")
     public Dipendente getProfile(@AuthenticationPrincipal Dipendente currentAuthenticatedUser) {
         return currentAuthenticatedUser;
@@ -46,7 +46,7 @@ public class DipendenteController {
         this.dipendenteService.findByIdAndDelete(currentAuthenticatedUser.getId());
     }
 
-    // il resto dei metodi
+    // il resto dei metodi----------------------------------------------------------------
 
     @GetMapping("/{id}")
     @PreAuthorize("hasAuthority('ADMIN')")
