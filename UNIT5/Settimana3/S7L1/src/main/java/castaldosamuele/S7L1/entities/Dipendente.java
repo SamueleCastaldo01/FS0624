@@ -1,5 +1,6 @@
 package castaldosamuele.S7L1.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "dipendenti")
+@JsonIgnoreProperties({"password", "role", "accountNonLocked", "credentialsNonExpired", "accountNonExpired", "authorities", "enabled"})
 public class Dipendente implements UserDetails {
     @Id
     @GeneratedValue

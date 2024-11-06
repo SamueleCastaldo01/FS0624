@@ -14,7 +14,7 @@ public class JWT {
     @Value("${jwt.secret}")
     private String secret;
 
-    public String CreateToken(Dipendente dipendente) {
+    public String createToken(Dipendente dipendente) {
         return Jwts.builder()
                 .issuedAt(new Date(System.currentTimeMillis())) // Data di emissione del Token (IAT - Issued At), va messa in millisecondi
                 .expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24 * 7)) // Data di scadenza del Token (Expiration Date), anche questa in millisecondi

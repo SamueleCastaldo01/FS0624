@@ -8,6 +8,7 @@ import castaldosamuele.S7L1.repositories.DipendenteRepository;
 import com.cloudinary.Cloudinary;
 import com.cloudinary.utils.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -22,6 +23,9 @@ public class DipendenteService {
 
     @Autowired
     private Cloudinary cloudinaryUploader;
+
+    @Autowired
+    private PasswordEncoder bcrypt;
 
     //GET --------------------------------------------
     public List<Dipendente> findAll() {
@@ -46,7 +50,7 @@ public class DipendenteService {
                     throw new BadRequestException("Username " + body.username() + " è già in uso!");
                 }
         );
-        Dipendente newDipendente = new Dipendente(body.username(), body.nome(), body.cognome(), body.email(), body.avatarUrl(), body.password());
+        Dipendente newDipendente = new Dipendente(body.username(), body.nome(), body.cognome(), body.email(), body.avatarUrl(), bcrypt.encode(body.password()));
         return this.dipendenteRepository.save(newDipendente);
     }
 
